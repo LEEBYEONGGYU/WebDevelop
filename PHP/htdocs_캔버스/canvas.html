@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>그림판</title>
+ <style>
+ body{ margin:20px; }
+ canvas{border:solid 1px #000; }
+ input {border:1px solid #000; }
+ </style>
+ <script>
+  var canvas;
+  var ctx;
+  var flag = false;
+
+  var ready = function(){
+   canvas = document.getElementById("canvas");
+   ctx = canvas.getContext("2d");
+   canvas.onmousedown = drawStart;
+   canvas.onmousemove = drawing;
+   window.onmouseup = drawEnd;
+  }
+  var drawStart = function(event){
+   ctx.beginPath();
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.moveTo(event.clientX-xpos, event.clientY-ypos);
+   flag = true;
+  }
+  var drawing = function(event){
+   if(flag) {
+   var xpos = event.target.offsetLeft;
+   var ypos = event.target.offsetTop;
+   ctx.lineCap = 'round'
+   ctx.lineTo(event.clientX-xpos, event.clientY-ypos);
+   ctx.stroke();
+   }
+  }
+  var drawEnd = function(event){
+   flag = false;
+  }
+  var save = function(){
+   window.open(canvas.toDataURL());
+  }
+  var erase = function(){
+   ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+
+  ctx.lineWidths = '30';
+ </script>
+</head>
+
+<body onload="ready()">
+ <canvas id="canvas" width="675" height="250"></canvas>
+</body>
+</html>

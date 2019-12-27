@@ -1,0 +1,104 @@
+/* SUB CSS */
+
+/* sub_flash */
+#s_flash {width:100%; position:relative; }
+	#s_flash_in {width:1100px; height:182px; position:relative;  }
+
+/* sub_content */
+#s_content {width:100%; position:relative; }
+#s_content_inner {width:850px; min-height:500px; position:relative; top:-180px; left:70px; border:solid 1px white;}
+
+/*sub_left_menu */
+#left_menu {width:170px; height:230px; position:relative; left:-450px; top:50px; }
+#left_mt {font:bold 15px "malgun gothic"; color:#715f52; list-style:none; }
+.lmt {margin-left:20px; font:12px "dotum"; color:black; list-style:none;}
+.lmt > li > a {color:black; }
+.lmtop {margin-top:20px; }
+.bg {background:#463219; height:20px; width:110px; }
+.bg > a {color:white; }
+.bg_t {padding-top:5px; padding-left:10px; }
+
+/* sub_name navi */
+#sub_n {position:absolute; font:bold 14px "malgun gothic"; list-style:none; top:0; }
+#sub_navi {position:absolute; font:12px "dotum"; right:10px; top:0; }
+#sub_navi > ul > li {float:left; margin-left:5px; }
+
+#hello { width:149px; height:239px; margin-left:80px; margin-top:70px; border:solid 1px red;  }
+#hello_t {font:12px "dotum"; margin-left:250px; margin-top:-230px;  }
+
+/*sub content */
+#gayo {position:absolute;   top:100px; }
+.gayo_pa {padding-top:40px; }
+.gayo_p {font:bold 15px "dotum";}
+.gayo_f {font:12px "dotum";  line-height:22px;  padding-left:20px;}
+.gayo_pf {padding-top:20px;   }
+#hand {position:absolute; top:50px;  left:30px; font:13px "dotum";  }
+#hand_img {position:absolute; left:10px; top:50px;  width:342px; height:257px; }
+
+/*freahcn */
+#freanch_img {position:absolute; left:10px; top:130px; width:600px; height:400px }
+#freanch_t {position:absolute; font:12px "dotum"; top:20px;  width:500px; }
+
+/*shop */
+.shop_n {width:50px; border:solid 1px red;  font:13px "dotum"; margin-left:10px; margin-top:30px;  }
+
+
+/*board*/
+.board {width:650px; margin-left:70px; margin-top:50px; }
+.fl {float:left; }
+.b_name {width:250px; }
+.ti_color {background:#efefef;  }
+
+.list {float:left;  height:20px; border-bottom:solid 1px gray; }
+
+.title1 {float:left; text-align:center; padding-top:10px; padding-bottom:10px; font:12px "dotum"; color:black;  }
+.title2 {float:left; text-align:center; padding-top:10px; padding-bottom:10px;  font:12px "dotum"; color:black;  }
+.title1_1 {float:left; text-align:center; padding-top:10px; padding-bottom:10px;  font:12px "dotum"; color:black;  }
+.title2_1 {float:left; text-align:center; padding-top:10px; padding-bottom:10px;  font:12px "dotum"; color:black; }
+.wline {border-right:solid 1px gray; }
+#write_g {position:absolute; top:500px; }
+
+/*width*/
+.w5 {width:50px; }
+.w17 {width:170px; }
+.w7 {width:70px; }
+.10 {width:10px; }
+.w100 {width:100px; }
+
+/* write */
+#write_in {position:absolute; top:50px; left:70px; font:13px "dotum"; width:600px; height:300px; }
+.nain {width:630px; border-top:solid 2px gray;  }
+.na_wh {width:80px; height:20px; background:#e5e5e5; margin-left:0px; }
+.na_p {padding-left:30px; padding-top:10px; }
+.na_put {margin-left:120px; margin-top:-24px; }
+
+#titin {position:absolute; top:33px; left:0px; font:13px "dotum"; width:600px; height:300px; }
+#conin {position:absolute; top:65px; left:0px; }
+.text_ar {margin-top:-50px; margin-left:120px; }
+#submi {position:absolute; top:180px; }
+
+
+/*read*/
+.read {width:10%;background:gray; height:40px; font:bold 13px "Malgun Gothic"; line-height:40px; color:black; text-align:center;  }
+.read_c {background-color:gray; }
+.read_con {width:90%;height:40px; float:left; font:normal 13px "Dotum"; line-height:40px; color:#333333; border-bottom:solid 1px black; }
+.read_nl {width:10%;background:gray; height:130px; font:bold 13px "Malgun Gothic"; line-height:130px; color:black;text-align:center; }
+.read_nl_con {width:89%;height:129px; float:left; font:normal 13px "Dotum"; line-height:40px;  }
+.read_txt {width:100%; text-align:right; font:normal 13px "Dotum"; margin-left:200px; }
+
+/* 댓글 */
+#dat_b {background:#f2f2f2; width:500px; height:200px; position:absolute; top:370px; }
+.bo_te {position:absolute; top:100px; z-index:10; }
+.do_im {position:absolute; top:140px; z-index:15; right:0; }
+#dot_l {list-style:none; font:13px "dotum"; top:380px; position:absolute; }
+
+/*쇼핑 */
+
+.shop_list {float:left;  height:75px; border-bottom:solid 1px gray; }
+#wb_bt {position:absolute; top:600px;  }
+
+/*검색 */
+#search {position:absolute; top:100px;  }
+#search >  li {float:left; margin-left:15px; }
+
+.search_su {margin-top:100px;  position:absolute; }

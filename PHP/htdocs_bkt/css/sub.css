@@ -1,0 +1,48 @@
+/*공통 서브페이지 타이틀*/
+.sub_bt {position:absolute; font:bold 36px 'malgun gothic'; top:50px; left:50px; }
+.sub_bt2 { font:bold 16px 'malgun gothic'; color:#b3b3b3; }
+/*intro*/
+
+.intro {position:relative; width:100%; }
+.intro_b {position:relative; width:100%;  background:url("/imgs/s_visual.jpg"); height:100px; }
+.intro_b_in {position:relative; width:1024px; height:100px; }
+.intro_in {position:relative; width:1024px; height:450px; }
+.intro_txt {position:absolute; font:14px 'malgun gothic'; top:140px; left:80px; line-height:28px;  }
+.hello_img {position:absolute; right:0px; top:150px; }
+
+/* 공지사항 */
+.notice_in {position:relative; width:1024px; height:500px; }
+.list_area {position:absolute; top:130px; left:50px; }
+.list-table thead th{ height:40px; border-top:2px solid #09C; border-bottom:1px solid #CCC; font:bold 17px 'malgun gothic';  }
+.list-table tbody td{ text-align:center; padding:10px 0; border-bottom:1px solid #CCC; height:20px; font: 14px 'malgun gothic';}
+
+/* 자유게시판 */
+.board_in {position:relative; width:1024px; height:200px; }
+.fl {float:left; }
+.write_btn {position:absolute; top:170px; left:40px;}
+.write_btn > button {border:solid 1px blue; padding:5px; }
+
+/* 게시판 글쓰기 */
+.board_write {position:relative; max-width:1024px; height:700px; }
+#te_title {font:40px 'malgun gothic'; overflow:hidden; resize:none;  position:absolute; left:50px;}
+#te_title2 {font:16px 'malgun gothic'; resize:none; position:absolute; left:50px;top:130px;  }
+.wri_bottom {position:relative; height:700px; width:1024px; }
+.file_in {position:absolute; top:570px; left:100px;}
+.wri_ok {position:absolute; top:600px; left:100px; }
+.wri_ok > button {padding:5px;}
+
+/* board read */
+.board_read {position:relative; max-width:1024px; height:100px; }
+.board_re_ar {position:relative; max-width:1024px; }
+.tit_read {font:bold 36px 'malgun gothic'; }
+.dat_read {font:20px 'malgun gothic'; color:#b3b3b3;}
+.con_read {position:relative; max-width:1024px;  padding-top:20px; font:16px 'malgun gothic'; }
+.board_service {position:relative; width:1024px; height:140px; padding-top:50px;}
+.dat_a {position:absolute; top:90px;}
+.bo_ser {font:14px 'malgun gothic'; color:#333;}
+.bo_ser > ul > li {float:left; margin-left:10px; }
+.fil {font:12px 'dotum'; }
+
+
+/* notice */
+.no_re_bo {height:50px;}

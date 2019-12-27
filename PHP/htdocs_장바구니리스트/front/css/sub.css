@@ -1,0 +1,17 @@
+#sub_content {
+	width: 100%;
+	border:solid 1px red;
+	position: relative;
+}
+#sub_content_in{
+	width:1200px;
+	border:solid 1px red;
+}
+#sub_con_t {
+	font:30px 'malgun gothic';
+	color:#333;
+}
+#sub_con_t2{
+	font:bold 18px 'malgun gothic';
+	color:gray;
+}

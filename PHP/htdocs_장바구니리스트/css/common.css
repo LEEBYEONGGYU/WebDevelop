@@ -1,0 +1,23 @@
+/* 기본적용*/
+* {margin:0 auto; }
+ul li {list-style: none; }
+a {color:#333; text-decoration: none; }
+
+/*index*/
+.fl {float:left;}
+h1 {text-align: center; margin: 10px; }
+#pro_list {width:1000px; position:relative;}
+#pro_list > span {position:absolute; font:bold 20px 'malgun gothic'; margin-left: 240px; }
+.pro_box {width:500px;  position:absolute; top:20px; }
+.pro_box li {float:left; margin:20px; }
+.pro_box li img {z-index:900; }
+.pro_info {width:500px; height:500px; margin-right:0; text-align:center; font:18px "malgun gothic";}
+.pro_info > span {font:bold 20px 'malgun gothic'; margin-left: 50px; }
+#servi_bt {margin-left: 130px; margin-top:40px;  }
+#servi_bt > ul > li {float:left; margin-left: 15px; }
+#mybaket {font-size: 14px; }
+
+/*mypage*/
+#mylist {width:1000px; position:relative; }
+.list-table thead th{ height:40px; border-top:2px solid #09C; border-bottom:1px solid #CCC; font:bold 17px 'malgun gothic','Sans-Serif','arial';  }
+.list-table tbody td{ text-align:center; padding:10px 0; border-bottom:1px solid #CCC; height:20px; font: 14px 'malgun gothic','Sans-Serif','arial';}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/note.css}" />
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:unless="${#authorization.expr('isAuthenticated()')}">
+<div id="wrap">
+	<div id="wrap_in">
+		<div id="mem_t">Member Login</div>
+		<!--- MemberLogin 텍스트와 input태그 사이 줄 긋기 -->
+		<div id="mem_li"></div>
+		<form th:action="@{/login}" method="post">
+		<div id="in_box" class="idpw_box">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
+			<input type="text" name="username" id="userid" maxlength="20" placeholder="사용자 아이디" required />
+			<input type="password" name="password" id="userpw" maxlength="20" placeholder="사용자 비밀번호" required/>
+		</div>
+		<span id="idpw_find"><a href="#">아이디나 비밀번호를 잊어버리셨나요?</a></span>
+		<span id="join_mem"><a href="/note/member">회원가입</a></span>
+		<div id="log_box_bot">
+			<button>LOGIN</button>
+		</div>
+		
+		<div align="center" th:if="${param.error}">
+                <script>alert("아이디 및 비밀번호를 확인해주세요");</script>
+            </div>
+	</form>
+</div><!--- wrap_in end -->
+</div><!--- wrap end -->
+</div>
+
+
+
+<div th:if="${#authorization.expr('isAuthenticated()')}">
+
+<div id="main_head">
+	<div id="main_head_in">
+		<span id="main_t"><a href="/page/note.php"><img src="/imgs/logo.png" alt="logo" title="logo" /></a></span>
+		<p id="mem_log"><?php echo $_SESSION['userid']; ?>님 환영합니다.<span id="mlog"><a href="/page/member/logout.php">로그아웃</a></span></p>
+	</div>
+</div>
+
+<aside>
+	<ul id="note_menu">
+		<li><img src="/imgs/recv.png" alt="recv" title="recv" /><a href="note.php"><b>받은쪽지함</b></a></li>
+		<li><img src="/imgs/send.png" alt="recv" title="recv" /><a href="note_send.php">보낸쪽지함</a></li>
+	</ul>
+</aside>
+<div id="main_in">
+	<table class="list-table">
+    <thead>
+      <tr>
+        <th width="50" class="tc"><input type="checkbox" /></th>
+        <th width="150" class="tl">보낸사람</th>
+        <th width="600" class="tl">내용</th>
+        <th width="200" class="tc">날짜</th>
+      </tr>
+    </thead>
+    <?php
+    //recv_note 받은쪽지함 데이터 가져오기
+    //recv_note테이블에서 recv_id가 세션userid와 같은것만 가져오기
+      $sql = mq("select * from recv_note where recv_id = '".$_SESSION['userid']."' order by idx desc"); 
+      while($recv = $sql->fetch_array()){
+      $note_title=$recv["title"]; 
+        if(strlen($note_title)>30)
+          { 
+            $note_title=str_replace($recv["title"],mb_substr($recv["title"],0,30,"utf-8")."...",$recv["title"]);
+          }
+        ?>
+        <tbody>
+          <tr>
+            <td class="tc"><input type="checkbox" /></td> <!---체크박스 -->
+            <td><?php echo $recv['send_id'];?></td> <!---보낸이 -->
+            <td><a href='/page/note/recv_read.php?idx=<?php echo $recv['idx']; ?>'><?php echo $note_title; ?></a></td> <!---제목 -->
+            <td class="tc"><?php echo $recv['send_date']; ?></td> <!---보낸시간 -->
+          </tr>
+        </tbody>
+      <?php } ?>
+    </table>
+    <div id="note_bt">
+      <ul>
+        <li id="wri_m_bt"><a href="note/write.php">쪽지쓰기</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

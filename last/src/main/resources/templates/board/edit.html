@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, link, content)">
+<head>
+<meta charset="UTF-8">
+<title>메인</title>
+<link rel="stylesheet" type="text/css" href="http://developtest.org/common.css" />
+</head>
+<body>
+<div id="board_write">
+        <h1><a href="/">게시글 수정</a></h1>
+        <h4>글을 수정합니다.</h4>
+            <div id="write_area">
+                <form action="/editok" method="post" enctype="multipart/form-data">
+                	<input type="hidden" th:value="${edit.idx}" name="idx"/>
+          
+                    <div id="in_title">
+                        <textarea name="title" id="utitle" rows="1" cols="55" th:value="${edit.title}" th:placeholder="${edit.title}" maxlength="100" required></textarea>
+                    </div>
+                    <div class="wi_line"></div>
+                    <div id="in_name">
+                        <textarea name="postid" id="uname" rows="1" cols="55" th:value="${edit.name}" th:placeholder="${edit.name}" maxlength="100" required></textarea>
+
+                    </div>
+                    <div class="wi_line"></div>
+                    <div id="in_content">
+                        <textarea name="content" id="ucontent" placeholder="내용" th:value="${edit.content}" th:placeholder="${edit.content}"required></textarea>
+                    </div>
+
+                    <div class="bt_se">
+                        <button type="submit">글 작성</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</html>

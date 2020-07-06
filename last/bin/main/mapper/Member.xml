@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.MemberMapper">
+	
+	<insert id="insertMember" parameterType="String">
+		INSERT INTO MEMBER (USERID, USERPW, PROFILE) VALUES 
+		(
+		 #{userid},
+		 #{userpw},
+		 null
+		 )
+
+	</insert>
+	
+	<select id="LoginOk" resultType="com.example.demo.dto.Member">
+		select * from member where userid= #{userid} and userpw= #{userpw}
+	</select>
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.BoardMapper">
+	<!-- 게시판 리스트 -->
+	<select id="boardList" resultType="com.example.demo.dto.Board">
+		select * from board order by idx desc
+	</select>
+	
+	<!-- 글 입력 -->
+	<select id="boardinsert" resultType="com.example.demo.dto.Board">
+		INSERT INTO BOARD (TITLE, NAME, CONTENT, PUT_FILE, lock_post, password) VALUES
+		(
+		#{title},
+		#{name},
+		#{content},
+		#{put_file},
+		#{lock_post},
+		#{password}
+		)
+
+	</select>
+	<!-- 	 게시판 read -->
+	<select id="boardDetail"  resultType="com.example.demo.dto.Board">
+		select * from board where idx=#{bno}
+	</select>
+	
+	<!-- 잠금체크 -->
+	<select id="checkpw" resultType="com.example.demo.dto.Board">
+		select idx, password from board where idx=#{idx} and password = #{password}
+	</select>
+	
+	
+	
+	<select id="BoardUpdate" resultType="com.example.demo.dto.Board">
+		Update board set title = #{title}, content = #{content} where idx=#{idx}
+	</select>
+	
+	<!-- 글 삭제 -->
+	<select id="BoardDelete" parameterType="int">
+		delete from board where idx=#{idx}
+	</select>
+	
+	<!-- 댓글 read -->
+	<select id="getReply" resultType="com.example.demo.dto.Reply">
+		select * from reply where bo_num = #{bno} order by idx desc
+	</select>
+	
+	<!-- 댓글작성 -->
+	<select id="insertReply" resultType="com.example.demo.dto.Reply">
+		insert into reply (bo_num, name, password, contents) values
+		(
+			#{bo_num},
+			#{name},
+			#{password},
+			#{contents}
+		)
+	</select>
+	
+	<select id="modifyReply"  resultType="com.example.demo.dto.Reply">
+	Update reply set password=#{password}, contents=#{contents} where idx=#{idx}
+	</select>
+	
+	<delete id="deleteReply">
+		delete from reply where idx=#{reply_idx}
+	</delete>
+	
+	
+	<!-- 조히수 업데이트 -->
+	<update id="updatehit" parameterType="int">
+		update board set hit = hit+1 where idx = #{bno}
+	</update>
+	
+	<!-- 추천박자 -->
+	<update id="likeHit" parameterType="int">
+		update board set like_jun = like_jun+1 where idx= #{idx}
+	</update>
+	
+	<update id="likeHitPer" parameterType="int">
+		update board set like_per = like_per+1  where idx= #{idx}
+	</update>
+	
+	<!-- 추천박자 -->
+	<insert id="likeHitinsert" parameterType="String">
+		insert into chuchen (userid, type) values ( #{userid}, #{type})
+	</insert>
+	
+</mapper>

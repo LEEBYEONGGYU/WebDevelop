@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="header"></head>
+<div id="board_area">
+	<h1>Spring Board</h1>
+	
+	<div th:if="${session.User == null}">
+	
+	<form action="/loginok" method="post">
+		아이디 : <input type="text" name="userid" />
+		비밀번호 : <input type="password" name="userpw"/>
+		<input type="submit" value="로그인" />
+	</form>
+	<a href="/member"><button>회원가입</button></a>
+	
+	</div>
+	<div th:if="${session.User != null}">
+	<p th:text="${session.User.type}"></p>
+	<a href="/logout">로그아웃</a>
+	</div>
+	<a href="/note/main"><button>쪽지</button></a>
+	 <table class="list-table">
+      <thead>
+          <tr>
+              <th width="70">번호</th>
+              <th width="160">제목</th>
+              <th width="200">글쓴이</th>
+              <th width="160">파일</th>
+              <th width="220">작성일</th>
+            </tr>
+        </thead>
+       <tbody>
+		<tr th:each="i : ${list}">
+			<td th:text="${i.idx}"></td>
+			<td th:if="${i.lock_post} == '1'">
+			<a th:href="@{'lock/'+${i.idx}}"><span th:text="${i.title}"></span></a><img src="/imgs/lock.png" width="30" height="30" />
+			</td>
+			<td th:unless="${i.lock_post} == '1'">
+			<a th:href="@{'read/'+${i.idx}}"><span th:text="${i.title}"></span></a>
+			</td>
+			<td th:text="${i.name}"></td>
+			<td ><a th:href="@{'D:/upload/'+${i.put_file}}" download><span th:text="${i.put_file}"></span></a></td>
+			<td th:text="${i.put_date}"></td>
+		</tr>
+      </tbody>
+    </table>
+    <a href="posts/"><button>글쓰기</button></a>
+    </div>
+	</body>

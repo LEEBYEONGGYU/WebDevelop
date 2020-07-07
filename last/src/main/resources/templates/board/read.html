@@ -8,6 +8,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 		<div id="user_info">
 			<span th:text="${detail.name}"></span> <span th:text="${detail.put_date}"></span> 조회: <span th:text="${detail.hit}"></span>
 			전문가추천수 <span th:text="${detail.like_jun}"></span> 일반추천수 <span th:text="${detail.like_per}"></span>
+			<br />
+			일반인추천리스트 <span th:each="i : ${cho_list}"><th:block th:text="${i.userid}"></th:block></span><br />
+			전문가추천리스트  <span th:each="i : ${cho_list_jun}"><th:block th:text="${i.userid}+', '"></th:block></span>
 				<div id="bo_line"></div>
 			</div>
 			<div>

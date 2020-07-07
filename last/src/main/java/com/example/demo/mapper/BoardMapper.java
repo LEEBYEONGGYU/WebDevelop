@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 import com.example.demo.dto.Board;
+import com.example.demo.dto.Chochen;
 import com.example.demo.dto.Create_Board;
 import com.example.demo.dto.Like;
 import com.example.demo.dto.Reply;
@@ -38,11 +39,15 @@ public interface BoardMapper {
 
 		public int likeHit(Like like);
 
-		public int likeHitinsert(Like like);
+		public void likeHitinsert(Like like);
 
 		public int likeHitPer(Like like);
 
 
 		public void checkpw(Board board);
+
+		public List<Chochen> getCholist(int bno);
+
+		public List<Chochen> getCholist_jun(int bno);
 
 }

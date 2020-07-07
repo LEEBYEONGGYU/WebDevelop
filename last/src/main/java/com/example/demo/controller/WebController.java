@@ -43,6 +43,8 @@ public class WebController {
 		boardService.updatehit(bno);
 		model.addAttribute("detail", boardService.boardDetailService(bno));
 		model.addAttribute("detail_reply", boardService.getReplyService(bno));
+		model.addAttribute("cho_list",boardService.getCholist(bno));
+		model.addAttribute("cho_list_jun",boardService.getCholist_jun(bno));
 		return "/board/read";
 	}
 
@@ -81,7 +83,15 @@ public class WebController {
 			board.setTitle(request.getParameter("title"));
 			board.setName(request.getParameter("postid"));
 			board.setContent(request.getParameter("content"));
-			board.setLock_post(Integer.parseInt(request.getParameter("lockpost")));
+			
+			String lock = request.getParameter("lock_post");
+			if(lock==null) {
+				lock = "0";
+			}else {
+				lock = "1";
+			}
+			
+			board.setLock_post(Integer.parseInt(lock));
 			board.setPassword(request.getParameter("lock_password"));
 
 			if (request.getParameter("put_file") != null) {
@@ -167,7 +177,6 @@ public class WebController {
 		String userid = request.getParameter("userid");
 		String type = request.getParameter("type");
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		//if(session.getAttribute("User.userid"))
 		
 		Like like = new Like();
 		like.setIdx(Integer.parseInt(request.getParameter("idx")));

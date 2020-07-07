@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.example.demo.dto.Board;
+import com.example.demo.dto.Chochen;
 import com.example.demo.dto.Create_Board;
 import com.example.demo.dto.Like;
 import com.example.demo.dto.Reply;
@@ -68,13 +69,13 @@ public class BoardService {
 	}
 
 	public int likeHit(Like like) {
-		return 		boardMapper.likeHit(like);
+		return boardMapper.likeHit(like);
 		
 	}
 
-	public int likeHitinsert(Like like) {
+	public void likeHitinsert(Like like) {
 		// TODO Auto-generated method stub
-		return boardMapper.likeHitinsert(like);
+		boardMapper.likeHitinsert(like);
 	}
 
 	public int likeHitPer(Like like) {
@@ -87,5 +88,14 @@ public class BoardService {
 	public void checkpw(Board board) {
 		// TODO Auto-generated method stub
 		boardMapper.checkpw(board);
+	}
+
+	public List<Chochen> getCholist(int bno) {
+		return boardMapper.getCholist(bno);
+	}
+
+	public List<Chochen> getCholist_jun(int bno) {
+		// TODO Auto-generated method stub
+		return boardMapper.getCholist_jun(bno);
 	}
 }

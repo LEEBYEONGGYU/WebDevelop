@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div th:unless="${#authorization.expr('isAuthenticated()')}">
+<div >
 <div id="wrap">
 	<div id="wrap_in">
 		<div id="mem_t">Member Login</div>
@@ -28,10 +28,7 @@
 		<div id="log_box_bot">
 			<button>LOGIN</button>
 		</div>
-		
-		<div align="center" th:if="${param.error}">
-                <script>alert("아이디 및 비밀번호를 확인해주세요");</script>
-            </div>
+
 	</form>
 </div><!--- wrap_in end -->
 </div><!--- wrap end -->
@@ -39,7 +36,7 @@
 
 
 
-<div th:if="${#authorization.expr('isAuthenticated()')}">
+
 
 <div id="main_head">
 	<div id="main_head_in">

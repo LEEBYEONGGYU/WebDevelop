@@ -80,8 +80,19 @@
 	</update>
 	
 	<!-- 추천박자 -->
-	<insert id="likeHitinsert" parameterType="String">
-		insert into chuchen (userid, type) values ( #{userid}, #{type})
+	<insert id="likeHitinsert">
+		insert into chuchen (userid, type, bno) values ( #{userid}, #{type}, #{idx})
 	</insert>
+	
+	<select id="getCholist" resultType="com.example.demo.dto.Chochen">
+		select * from chuchen where bno=#{idx} and type='일반'
+	</select>
+	
+	<select id="getCholist_jun" resultType="com.example.demo.dto.Chochen">
+		select * from chuchen where bno=#{idx} and type='전문가'
+	</select>
+	
+	
+	
 	
 </mapper>

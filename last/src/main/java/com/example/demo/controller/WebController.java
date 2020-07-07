@@ -45,6 +45,7 @@ public class WebController {
 		model.addAttribute("detail_reply", boardService.getReplyService(bno));
 		model.addAttribute("cho_list",boardService.getCholist(bno));
 		model.addAttribute("cho_list_jun",boardService.getCholist_jun(bno));
+		model.addAttribute("reply_two",boardService.getReplyTwo(bno));
 		return "/board/read";
 	}
 
@@ -171,27 +172,34 @@ public class WebController {
 	
 	//추천박자
 	@RequestMapping("/like")
-	public String likeHit(HttpServletRequest request) throws Exception{
-		HttpSession session = request.getSession();
-		
+	public String likeHit(HttpServletRequest request, Model model){
 		String userid = request.getParameter("userid");
 		String type = request.getParameter("type");
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		
-		Like like = new Like();
-		like.setIdx(Integer.parseInt(request.getParameter("idx")));
-		like.setUserid(userid);
-		like.setType(type);
-		
-		System.out.println(userid + " " + type + " " + idx);
-		
-		if(type.equals("전문가")) {
-			boardService.likeHit(like);
-			boardService.likeHitinsert(like);
-		}else {
-			boardService.likeHitPer(like);
-			boardService.likeHitinsert(like);
+		try {
+			HttpSession session = request.getSession();
+			
+			Like like = new Like();
+			like.setIdx(Integer.parseInt(request.getParameter("idx")));
+			like.setUserid(userid);
+			like.setType(type);
+			
+			System.out.println(userid + " " + type + " " + idx);
+			
+			if(type.equals("전문가")) {
+				boardService.likeHit(like);
+				boardService.likeHitinsert(like);
+			}else {
+				boardService.likeHitPer(like);
+				boardService.likeHitinsert(like);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("이미 했음");
+			model.addAttribute("error","0");
 		}
+		
+		
 		return "redirect:/read/"+idx;
 	}
 }

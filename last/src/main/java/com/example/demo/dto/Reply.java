@@ -10,6 +10,21 @@ public class Reply {
 	String title;
 	String contents;
 	Timestamp put_date;
+	int depth;
+	int depth2;
+	
+	public int getDepth() {
+		return depth;
+	}
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+	public int getDepth2() {
+		return depth2;
+	}
+	public void setDepth2(int depth2) {
+		this.depth2 = depth2;
+	}
 	public int getIdx() {
 		return idx;
 	}

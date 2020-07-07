@@ -42,7 +42,7 @@
 	
 	<!-- 댓글 read -->
 	<select id="getReply" resultType="com.example.demo.dto.Reply">
-		select * from reply where bo_num = #{bno} order by idx desc
+		select * from reply where bo_num = #{bno} and depth2='0' order by idx desc
 	</select>
 	
 	<!-- 댓글작성 -->
@@ -90,6 +90,10 @@
 	
 	<select id="getCholist_jun" resultType="com.example.demo.dto.Chochen">
 		select * from chuchen where bno=#{idx} and type='전문가'
+	</select>
+	
+	<select id="getReplyTwo" resultType="com.example.demo.dto.Reply">
+		select * from reply where bo_num=#{bno} and depth='1' and depth2='1'
 	</select>
 	
 	

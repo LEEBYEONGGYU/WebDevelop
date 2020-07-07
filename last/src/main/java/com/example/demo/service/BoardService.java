@@ -98,4 +98,9 @@ public class BoardService {
 		// TODO Auto-generated method stub
 		return boardMapper.getCholist_jun(bno);
 	}
+
+	public List<Reply> getReplyTwo(int bno) {
+		// TODO Auto-generated method stub
+		return boardMapper.getReplyTwo(bno);
+	}
 }

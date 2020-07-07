@@ -2,6 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org"
 xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="header"></head>
+<th:block th:if="${error}=='0'">
+	<script>alert("이미 추천했습니다");</script>
+
+</th:block>
+
+<style>
+.dap_ins {
+display:none;}
+</style>
 <!-- 글 불러오기 -->
 <div id="board_read">
 	<h2 th:text="${detail.title}"></h2>
@@ -44,6 +53,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			<div class="dap_to comt_edit" ><th:block th:text="${i.contents}"></th:block></div>
 			<div class="rep_me dap_to" th:text=${i.put_date}></div>
 			<div class="rep_me rep_menu">
+				<a class="dat_two_bt" href="#">대댓글</a>
 				<a class="dat_edit_bt" href="#">수정</a>
 				<a class="dat_delete_bt" th:href="@{'/reply_delete/'+${i.idx}+'/'+${detail.idx}}">삭제</a>
 			</div>
@@ -64,11 +74,38 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			 		<p>비밀번호<input type="password" name="pw" /> <input type="submit" value="확인"></p>
 				 </form>
 			</div>
-		</div>
-	<?php } ?>
+					<!--- two 댓글 입력 폼 -->
+			<div class="dap_ins">
+				<form th:action="@{'/two_reply/'+${detail.idx}}" method="post">
+					<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
+					<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
+					<div style="margin-top:10px; ">
+						<textarea name="content" class="reply_content" id="re_content" ></textarea>
+						<button id="rep_bt" class="re_bt">댓글</button>
+					</div>
+				</form>
+			</div>
 
+		</div>
+
+<div class="dap_lo2" th:each="i : ${reply_two}">
+			<div><b th:text=${i.name}></b></div>
+			<div class="dap_to comt_edit" ><th:block th:text="${i.contents}"></th:block></div>
+			<div class="rep_me dap_to" th:text=${i.put_date}></div>
+			<div class="rep_me rep_menu">
+				<a class="dat_two_bt" href="#">대댓글</a>
+				<a class="dat_edit_bt" href="#">수정</a>
+				<a class="dat_delete_bt" th:href="@{'/reply_delete/'+${i.idx}+'/'+${detail.idx}}">삭제</a>
+			</div>
+			</div>
+			
+
+			
+	
+	
+	
 	<!--- 댓글 입력 폼 -->
-	<div class="dap_ins">
+	<div class="dap_two">
 		<form th:action="@{'/reply_ok/'+${detail.idx}}" method="post">
 			<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
 			<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">

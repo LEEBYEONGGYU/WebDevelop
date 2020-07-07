@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	
+	$(".dat_two_bt").click(function(){
+		/* dat_edit_bt클래스 클릭시 동작(댓글 수정) */
+			var obj = $(this).closest(".dap_lo").find(".dap_ins");
+			obj.dialog({
+				modal:true,
+				width:650,
+				height:200,
+				title:"대댓작성"});
+		});
+	
+	
 	$(".dat_edit_bt").click(function(){
 		/* dat_edit_bt클래스 클릭시 동작(댓글 수정) */
 			var obj = $(this).closest(".dap_lo").find(".dat_edit");

@@ -50,4 +50,6 @@ public interface BoardMapper {
 
 		public List<Chochen> getCholist_jun(int bno);
 
+		public List<Reply> getReplyTwo(int bno);
+
 }

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="header"></head>
-<th:block th:if="${error}=='0'">
+<th:block th:if="${error}==null">
 	<script>alert("이미 추천했습니다");</script>
 
 </th:block>
@@ -58,6 +58,20 @@ display:none;}
 				<a class="dat_delete_bt" th:href="@{'/reply_delete/'+${i.idx}+'/'+${detail.idx}}">삭제</a>
 			</div>
 			
+			<div class="dap_lo2" th:each="r : ${reply_two}">
+				<div th:if="${i.idx} == ${r.ro_idx}">
+				
+				
+			<div><b th:text=${r.name}></b></div>
+			<div class="dap_to comt_edit" ><th:block th:text="${r.contents}"></th:block></div>
+			<div class="rep_me dap_to" th:text=${r.put_date}></div>
+			<div class="rep_me rep_menu">
+				<a class="dat_two_bt" href="#">대댓글</a>
+				<a class="dat_edit_bt" href="#">수정</a>
+				<a class="dat_delete_bt" th:href="@{'/reply_delete/'+${r.idx}+'/'+${detail.idx}}">삭제</a>
+			</div>
+			</div>
+			
 			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
 				<form method="post" action="/reply_modify_ok">
@@ -76,7 +90,7 @@ display:none;}
 			</div>
 					<!--- two 댓글 입력 폼 -->
 			<div class="dap_ins">
-				<form th:action="@{'/two_reply/'+${detail.idx}}" method="post">
+				<form th:action="@{'/two_reply/'+${detail.idx}+'/'+${i.idx}}" method="post">
 					<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
 					<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
 					<div style="margin-top:10px; ">
@@ -88,15 +102,7 @@ display:none;}
 
 		</div>
 
-<div class="dap_lo2" th:each="i : ${reply_two}">
-			<div><b th:text=${i.name}></b></div>
-			<div class="dap_to comt_edit" ><th:block th:text="${i.contents}"></th:block></div>
-			<div class="rep_me dap_to" th:text=${i.put_date}></div>
-			<div class="rep_me rep_menu">
-				<a class="dat_two_bt" href="#">대댓글</a>
-				<a class="dat_edit_bt" href="#">수정</a>
-				<a class="dat_delete_bt" th:href="@{'/reply_delete/'+${i.idx}+'/'+${detail.idx}}">삭제</a>
-			</div>
+
 			</div>
 			
 

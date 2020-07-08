@@ -196,10 +196,29 @@ public class WebController {
 		}catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("이미 했음");
-			model.addAttribute("error","0");
+			Object a=null;
+			model.addAttribute("error",a);
+			return "redirect:/read/"+idx;
 		}
 		
 		
 		return "redirect:/read/"+idx;
+	}
+	
+	
+	//대댓글 처리
+	@RequestMapping("/two_reply/{bo_num}/{re_idx}")
+	public String replyOkTwo(HttpServletRequest request, @PathVariable int bo_num, @PathVariable int re_idx) throws Exception {
+
+		Reply reply = new Reply();
+		reply.setBo_num(bo_num);
+		reply.setDepth(re_idx);
+		reply.setName(request.getParameter("dat_user"));
+		reply.setPassword(request.getParameter("dat_pw"));
+		reply.setContents(request.getParameter("content"));
+
+		boardService.insertTwoReply(reply);
+		boardService.TwoReplyUpdate(re_idx);
+		return "redirect:/read/" + bo_num;
 	}
 }

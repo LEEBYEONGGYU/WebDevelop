@@ -103,4 +103,14 @@ public class BoardService {
 		// TODO Auto-generated method stub
 		return boardMapper.getReplyTwo(bno);
 	}
+
+	public String insertTwoReply(Reply reply) {
+		return boardMapper.insertTwoReply(reply);
+		
+	}
+
+	public void TwoReplyUpdate(int re_idx) {
+		// TODO Auto-generated method stub
+		boardMapper.TwoReplyUpdate(re_idx);
+	}
 }

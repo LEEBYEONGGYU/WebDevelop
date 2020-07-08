@@ -12,7 +12,15 @@ public class Reply {
 	Timestamp put_date;
 	int depth;
 	int depth2;
+	int ro_idx;
 	
+	
+	public int getRo_idx() {
+		return ro_idx;
+	}
+	public void setRo_idx(int ro_idx) {
+		this.ro_idx = ro_idx;
+	}
 	public int getDepth() {
 		return depth;
 	}

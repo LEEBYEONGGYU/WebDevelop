@@ -93,10 +93,25 @@
 	</select>
 	
 	<select id="getReplyTwo" resultType="com.example.demo.dto.Reply">
-		select * from reply where bo_num=#{bno} and depth='1' and depth2='1'
+		select * from reply where bo_num=#{bno} and depth='1' and depth2='2' and ro_idx='19'
 	</select>
 	
+	<!-- 대댓글작성 -->
+	<select id="insertTwoReply" resultType="com.example.demo.dto.Reply">
+		insert into reply (bo_num, name, password, contents, depth2, ro_idx) values
+		(
+			#{bo_num},
+			#{name},
+			#{password},
+			#{contents},
+			'1',
+			#{depth}
+		)
+	</select>
+	<update id="TwoReplyUpdate" parameterType="int">
+	update reply set depth2='2' where ro_idx=#{ro_idx}
 	
+	</update>
 	
 	
 </mapper>

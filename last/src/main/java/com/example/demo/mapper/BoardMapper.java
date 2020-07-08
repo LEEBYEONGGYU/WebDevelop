@@ -52,4 +52,8 @@ public interface BoardMapper {
 
 		public List<Reply> getReplyTwo(int bno);
 
+		public String insertTwoReply(Reply reply);
+
+		public void TwoReplyUpdate(int re_idx);
+
 }

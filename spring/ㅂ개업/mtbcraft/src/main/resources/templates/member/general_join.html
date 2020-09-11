@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header"></head>
+<div id="sub_img"></div>
+<div id="join_form">
+
+<h2><b>회원가입 입력</b></h2>
+
+                <div class="form-group">
+                    <label for="provision" >회원가입약관</label>
+                    <div class="col-lg-10" id="provision">
+                        <textarea class="form-control" rows="5" style="resize:none">약관동의
+							어서 동의하거라 하지 않는다면 후회하게 될 것이다
+                        </textarea>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="provisionYn" name="provisionYn" value="Y" autofocus="autofocus" checked>
+                                동의합니다.
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="provisionYn" name="provisionYn" value="N">
+                                동의하지 않습니다.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="memberInfo">개인정보취급방침</label>
+                    <div class="col-lg-10" id="memberInfo">
+                        <textarea class="form-control" rows="5" style="resize:none">개인정보의 항목 및 수집방법
+							너의 개인정보는 내가 탈취해가도록 하지 탈취미션
+                        </textarea>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="memberInfoYn" name="memberInfoYn" value="Y" checked>
+                               		 동의합니다.
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="memberInfoYn" name="memberInfoYn" value="N">
+                               		 동의하지 않습니다.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                 <form class="form-horizontal"  method="post" th:action="@{/member/general_join}" enctype="multipart/form-data">
+                <div class="form-group has-feedback">
+            <label class="control-label" for="id"><b>아이디</b></label>
+            <input class="form-control" type="text" name="userid" id="R_ID"/>
+            <span id="overlapErr" class="help-block">자동으로 중복체크 합니다</span>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="pwd"><b>비밀번호</b></label>
+            <input class="form-control" type="password" name="userpw" id="R_PW"/>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="nickname"><b>이름</b></label>
+            <input class="form-control" type="text" name="username" id="R_NAME"/>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="nickname"><b>닉네임</b></label>
+            <input class="form-control" type="text" name="usernickname" id="R_NICKNAME"/>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="birthday"><b>생년월일</b></label>
+            <input class="form-control" type="date" id="datepickerd" name="userbirth" />
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="phone"><b>전화번호</b></label>
+            <input class="form-control" type="text" name="userphone" id="R_PHONE"/>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="birthday"><b>성별</b></label>
+            <select name="usergender">
+            	<option value="1">남</option>
+            	<option value="2">여</option>
+            </select>
+        </div>
+        
+        <div class="form-group has-feedback">
+            <label class="control-label" for="profile"><b>프로필사진</b></label>
+            <input class="form-control" type="file" name="userphoto" id="R_IMAGE"/>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="addr"><b>주소</b></label>  <input type="button" onclick="execPostCode();" value="주소찾기"/>
+            <input class="form-control" type="text" name="useraddr" id="R_ADDR"/>
+        </div>
+        <div class="form-group has-feedback">
+            <label class="control-label" for="addr2"><b>상세주소</b></label>
+            <input class="form-control" type="text" name="useraddr2" id="R_ADDR2"/>
+        </div>
+        <input class="form-control" type="hidden" name="usertype" value="0" />
+        <button class="btn btn-success" type="submit">가입</button>
+            </form>
+            </div>
+            <script src="/js/adress.js"></script>
+<footer th:replace="footer"></footer>

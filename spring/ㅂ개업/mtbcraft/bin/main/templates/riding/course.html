@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header"></head>
+<div id="sub_img"></div>
+
+<!-- 임시 테스트  -->
+<div id="sub_area">
+	<div id="left_menu">
+		<ul class="list-group">
+			<li><h2>라이딩</h2></li>
+			<li class="list-group-item list-group-item-action"><a href="#" >등록된 코스 조회</a></li>
+			<li class="list-group-item list-group-item-action"><a href="#" >주행 기록 조회</a></li>
+			<li class="list-group-item list-group-item-action"><a href="#" >스크랩한 코스 조회</a></li>
+			<li class="list-group-item list-group-item-action"><a href="#" >등록된 위험 지역 조회</a></li>
+		</ul>
+	</div>
+
+
+<button id="getCourse">등록된 코스 조회</button>
+<button id="getUserRidingRecord">주행 기록 조회</button>
+<button id="getScrapCourse">스크랩한 코스 조회</button>
+<button id="getDangerousArea">등록된 위험 지역 조회</button>
+<hr>
+<div id="map" style="width:83%;height:350px;"></div>
+<div id="dangerousAreaTest">
+	<form action="">
+		<label>위도</label><input type="text" id="DALatitude" name="latitude" size="18">
+		<label>경도</label><input type="text" id="DALongitude" name="longitude" size="18">
+		<label>등록주소</label><input type="text" id="DAaddress" name="address" size="8">
+		<label>한줄평</label><input type="text" id="DAcontent" name="content" size="40">
+		<label>이미지첨부</label><input type="file" id="DAImage" name="file">
+		<input type="hidden" id="DANum" name="num">
+		<input type="hidden" id="DARider" name="num">
+	</form>
+	<button id="postDA">등록신청하기</button>
+	<button id="showBox_NODA">해지 신청하기</button>
+	<hr>
+    	보고자하는장소 : <input type="text" id="keyword" size="15"> 
+		<button id="bt_search">검색하기</button> 
+    <hr>
+</div>
+<div id="box_NODA">
+	<h4>한줄평과 이미지를 첨부해야 해지 신청이 가능합니다.</h4>
+	<label>한줄평</label><input type="text" id="NODAcontent" name="content" size="40">
+	<label>이미지첨부</label><input type="file" id="NODAImage" name="file">
+	<button id="postNODA">해지 신청하기</button>
+</div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75b139a908cf5a67ae5c093565896a18&libraries=services"></script>
+<script>
+	
+</script>
+<div id="ridingRecords">우흥</div>
+<script>
+	$(document).ready(function() {
+		userId = $("#nav_t_login ul li b span").html();
+		$('#dangerousAreaTest').hide();
+		$('#box_NODA').hide();
+		$('#showBox_NODA').hide();
+		
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = { 
+	        center: new kakao.maps.LatLng(35.89617906303501, 128.62171907592318), // 지도의 중심좌표
+	        level: 5 // 지도의 확대 레벨
+	    };
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
+	
+	// 지도를 클릭한 위치에 표출할 마커입니다
+	var marker = new kakao.maps.Marker({ 
+	    // 지도 중심좌표에 마커를 생성합니다 
+	    position: map.getCenter() 
+	}); 
+	// 지도에 마커를 표시합니다
+	marker.setMap(map);
+	
+	// 장소 검색 객체를 생성합니다
+	var ps = new kakao.maps.services.Places();
+	
+	$('#bt_search').click(function(){
+		var keyword = document.getElementById('keyword').value;
+
+	    if (!keyword.replace(/^\s+|\s+$/g, '')) {
+	        alert('키워드를 입력해주세요!');
+	        return false;
+	    }
+
+	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+	    ps.keywordSearch( keyword, placesSearchCB);
+	});
+	
+	// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+	function placesSearchCB(data, status, pagination) {
+	    if (status === kakao.maps.services.Status.OK) {
+
+	        // 정상적으로 검색이 완료됐으면
+	        // 검색 목록과 마커를 표출합니다
+	        displayPlaces(data);
+
+
+	    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+	        alert('검색 결과가 존재하지 않습니다.');
+	        return;
+
+	    } else if (status === kakao.maps.services.Status.ERROR) {
+
+	        alert('검색 결과 중 오류가 발생했습니다.');
+	        return;
+
+	    }
+	}
+	// 검색 결과 목록과 마커를 표출하는 함수입니다
+	function displayPlaces(places) {
+
+	    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+	    map.setCenter(new kakao.maps.LatLng(places[0].y, places[0].x));
+	}
+	
+	kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+		$('#showBox_NODA').hide();
+		$('#postDA').show();
+		$('#DAcontent').val("");
+		$('#DAImage').val("");
+		$('#NODAcontent').val("");
+		$('#NODAImage').val("");
+		$('#box_NODA').hide();
+		searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+	        if (status === kakao.maps.services.Status.OK) {
+	        	// 지번 주소정보
+	        	var detailAddr = result[0].address.address_name;
+	        	var addr = detailAddr.split(" ");
+	        	// 시 + 군구
+	        	$("#DAaddress").val(addr[0]+" "+addr[1]);
+			    
+	        	// 클릭한 위도, 경도 정보를 가져옵니다 
+			    var latlng = mouseEvent.latLng; 
+			    // 마커 위치를 클릭한 위치로 옮깁니다
+			    marker.setPosition(latlng);
+			    // 위도,경도정보
+			    $("#DALatitude").val(latlng.getLat());
+			    $("#DALongitude").val(latlng.getLng());
+	    	}
+		});
+	});
+	
+	
+	
+	function searchDetailAddrFromCoords(coords, callback) {
+	    // 좌표로 법정동 상세 주소 정보를 요청합니다
+	    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+	}
+		
+		$("#getUserRidingRecord").click(function(){
+			$('#dangerousAreaTest').hide();
+			$.ajax({
+				url : "/riding/check/?rr_rider=" + userId, // 제이슨오브젝트값을 가져옴
+				dataType : "json", // 데이터 타입을 제이슨 꼭해야함, 다른방법도 2가지있음
+				cache : false, // 이걸 안쓰거나 true하면 수정해도 값반영이 잘안댐
+				success : function(data) {
+					var records = "<h3>"+userId+"님의 주행기록</h3><hr>";
+					for(var i in data){
+						records+="<ul>";
+						for(var key in data[i]){
+							records+= "<li>"+key+" : "+data[i][key]+"</li>";
+						}
+						records += "<form action='/riding/update' method='get'><input type='submit' value=";
+						if(data[i].rr_open==1){
+							records+="'비공개로 전환'>";
+						}else{
+							records+="'공개로 전환'>";
+						}
+						records+="<input type='hidden' name='rr_num' value="+data[i].rr_num+"><input type='hidden' name='rr_open' value="
+						+data[i].rr_open+"></form></ul><hr>";
+					}
+					$("#ridingRecords").html(records);
+					alert("로그인한 사용자 주행 기록 조회 완료");				
+				}
+			});
+		});
+		
+		$("#getScrapCourse").click(function(){
+			$('#dangerousAreaTest').hide();
+			$.ajax({
+				url : "/riding/scrap/check/?rr_rider="+userId, 
+				dataType : "json", 
+				cache : false, 
+				success : function(data) {
+					var records = "<h3>"+userId+"님의 스크랩 코스 정보</h3><hr>";
+					for(var i in data){
+						records+="<ul>";
+						for(var key in data[i]){
+							records+= "<li>"+key+" : "+data[i][key]+"</li>";
+						}
+						records += "<form action='/riding/scrap/delete' method='get'><input type='submit' value='삭제'>"
+							+"<input type='hidden' name='ss_course' value="+data[i].c_num+">"
+							+"<input type='hidden' name='ss_rider' value="+userId+"></form></ul><hr>";
+					}
+					
+					$("#ridingRecords").html(records);
+					alert("로그인한 사용자 스크랩 코스 조회 완료");				
+				}
+			});
+		});
+		
+		$("#getCourse").click(function(){
+			$('#dangerousAreaTest').hide();
+			$.ajax({
+				url : "/riding/course/check", 
+				dataType : "json", 
+				cache : false, 
+				success : function(data) {
+					var records = "<h3>현재 서버에 등록된 코스</h3><hr>";
+					for(var i in data){
+						records+="<ul>";
+						for(var key in data[i]){
+							records+= "<li>"+key+" : "+data[i][key]+"</li>";
+						}
+						records+="<button id="+data[i].c_num+" onclick='click_scrap(this.id)'>스크랩하기</button></ul><hr>";
+					}
+					
+					$("#ridingRecords").html(records);
+					alert("등록된 코스 조회 완료");				
+				}
+			});
+		});
+		
+		$("#getDangerousArea").click(function(){
+			$('#dangerousAreaTest').show();
+			$('#showBox_NODA').hide();
+			// 가져온 위험지역의 da_num 과 위치정보를 담을 리스트 생성
+			var positions = [];
+			var records="";
+			$.ajax({
+				url : "/riding/DA/checkA", 
+				dataType : "json", 
+				cache : false,
+				success : function(data) {
+					for(var i in data){
+						var da = {
+							"da_num" : data[i].da_num,
+							"da_rider" : data[i].da_rider,
+							"da_content" : data[i].da_content,
+							"da_addr" : data[i].da_addr,
+							"da_latlng" : new kakao.maps.LatLng(data[i].da_latitude, data[i].da_longitude)
+						};
+						positions.push(da);
+					}
+					$.ajax({
+						url : "/riding/DA/check/?rr_rider="+userId, 
+						dataType : "json", 
+						cache : false, 
+						success : function(data) {
+							records += "<h3>현재 사용자가 등록한 위험지역</h3><hr>";
+							for(var i in data){
+								records+="<h5>등록지역 : "+data[i].da_addr+"</h5>";
+								records+="<h5>한줄평 : "+data[i].da_content+"</h5>";
+								records+="<button onclick='deleteMyDA("+data[i].da_num+")'>삭제하기</button><hr>";
+							}
+							$("#ridingRecords").html(records);
+						}
+					});
+					for (var i = 0; i < positions.length; i ++) {
+					    // 마커를 생성합니다
+					    var marker = new kakao.maps.Marker({
+					        map: map, // 마커를 표시할 지도
+					        position: positions[i].da_latlng // 마커의 위치
+					    });
+
+					    // 마커에 표시할 인포윈도우를 생성합니다 
+					    var infowindow = new kakao.maps.InfoWindow({
+					        content: positions[i].da_content // 인포윈도우에 표시할 내용
+					    });
+
+					    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+					    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+					    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+					    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+					    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+					    kakao.maps.event.addListener(marker, 'click', makeClickListener(positions[i]));
+					    console.log('마크'+i+"번 정보 : "+positions[i].da_num+"/"+positions[i].da_content);
+					}
+
+					// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+					function makeOverListener(map, marker, infowindow) {
+					    return function() {
+					        infowindow.open(map, marker);
+					    };
+					}
+
+					// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+					function makeOutListener(infowindow) {
+					    return function() {
+					        infowindow.close();
+					    };
+					}
+					function makeClickListener(position){
+						return function(){
+							$('#DANum').val(position.da_num);
+							$('#DARider').val(position.da_rider);
+							$('#DALatitude').val(position.da_latlng.getLat());
+							$('#DALongitude').val(position.da_latlng.getLng());
+							$('#DAaddress').val(position.da_addr);
+							$('#DAcontent').val(position.da_content);
+							$('#showBox_NODA').show();
+							$('#postDA').hide();
+						};
+					}
+				}
+			});
+			alert("등록된 위험 지역 조회 완료");
+		});
+		$('#postDA').click(function(){
+			if(userId==null){
+				alert('로그인한 후에 신청하실 수 있습니다.');
+				return;
+			}
+			alert(userId+"님의 위험지역 등록 시작합니다...");
+			var info = { 
+					"da_rider" : userId,
+					"da_latitude" : $('#DALatitude').val(),
+					"da_longitude" : $('#DALongitude').val(),
+					"da_addr" : $('#DAaddress').val(),
+					"da_content" : $('#DAcontent').val(),
+					"da_image" : $('#DAImage').val()
+			};
+			$.ajax({
+				url : "/riding/DA/post", 
+				dataType : "json",
+				type : "post",
+				data : JSON.stringify(info),
+				contentType: "application/json",
+				cache : false
+			});
+		});
+		function click_scrap(courseId){
+			 var info = { "ss_rider" : userId, "ss_course" : courseId };
+			 $.ajax({
+				url : "/riding/scrap/check",
+				dataType : "json",
+				type : "post",
+				data : JSON.stringify(info),
+				contentType: "application/json",
+				cache : false, // 이걸 안쓰거나 true하면 수정해도 값반영이 잘안댐
+				success : function(result) { },
+				error : function(result){
+					if(result["responseText"]=="success"){
+						alert("스크랩하였습니다!");
+					}
+					else{
+						alert("이미 스크랩한 코스입니다!");
+					}
+				}
+			});
+		}
+		$('#showBox_NODA').click(function(){
+			if(userId == $('#DARider').val()){
+				alert("자신이 등록한 위험지역은 해지신청 없이 삭제 가능합니다.");
+				return;
+			}
+			$('#box_NODA').show();
+		});
+		$('#postNODA').click(function(){
+			if($('#NODAImage').val() == null || $('#NODAImage').val() == "" || $('#NODAcontent').val() == null || $('#NODAcontent').val() == "" ){
+				alert('입력하지않은 항목이 있습니다.');
+				return;
+			}
+			var info = { 
+					"nd_num" : $('#DANum').val(),
+					"nd_rider" : userId,
+					"nd_content" : $('#NODAcontent').val(),
+					"nd_image" : $('#NODAImage').val()
+			};
+			console.log(info);
+			$.ajax({
+				url : "/riding/DA/delete",
+				dataType : "json",
+				type : "POST",
+				data : JSON.stringify(info),
+				contentType: "application/json",
+				cache : false, 
+				complete : function(result){
+					if(result.responseText=="success"){
+						alert('해지 신청하였습니다');
+					} else{
+						alert('이미 해지 신청한 위험 지역입니다.');
+					}
+				}
+			});	
+		});
+	});
+	
+	function deleteMyDA(da_num){
+		var info = { "da_num" : da_num };
+		console.log(info);
+		$.ajax({
+			url : "/riding/DA/delete",
+			dataType : "json",
+			type : "delete",
+			data : JSON.stringify(info),
+			contentType: "application/json",
+			cache : false, 
+			success : function(result) { 
+			},
+			complete : function(){
+				alert('삭제하였습니다.');
+				location.reload();
+			}
+		});		
+	}
+	
+</script>
+</div>
+<footer th:replace="footer"></footer>

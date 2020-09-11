@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Insert title here</title></head>
+<body>
+<H1>Test</H1>
+<p th:text="#{home.welcome(${user.userName})}"></p>
+<div th:if="${admin}==true"><p>[ADMIN]</p></div>
+<div th:unless="${admin}==true"> <!-- 아니면.. --><p>[USER]</p></div>
+<p th:text="${{admin}}"></p> <!--String이 아닌 데이터타입의 toString()역할 -->
+<p th:text="(${admin}==true? 'ADMIN':'USER') + '입니다!' "></p>
+<ul>
+<li th:each="study: ${toStudy}"><p th:text="${study}"></p></li>
+</ul>
+<ul>
+<!-- status: index, count, size, current, even/odd, first, last -->
+<li th:each="study, status: ${toStudy}"><p th:text="${status.index + ':' + study}"></p></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,8 @@
+package com.busyvacation.happyclass.db.mapper;
+
+import java.util.ArrayList;
+import com.busyvacation.happyclass.db.dto.User;
+import com.busyvacation.happyclass.db.service.UserService;
+public interface UserMapper {
+public ArrayList<User> getUsers() throws Exception;
+}

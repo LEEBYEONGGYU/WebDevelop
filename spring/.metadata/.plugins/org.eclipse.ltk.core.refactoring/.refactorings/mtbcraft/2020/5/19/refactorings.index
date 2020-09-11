@@ -1,0 +1,96 @@
+1588496300931	Rename package 'templates.comunity'
+1588591365164	Delete element
+1588594643222	Delete element
+1588594646910	Delete element
+1588596920915	Delete element
+1588596941200	Delete element
+1588596946477	Delete element
+1588596949976	Delete element
+1588597669093	Delete element
+1588598154151	Delete element
+1588601230676	Delete element
+1588602470356	Delete element
+1588602495506	Copy file
+1588602548983	Rename resource 'join.html'
+1588602555104	Delete element
+1588602559422	Rename resource 'joinSelect.html'
+1588602818889	Copy file
+1588602823487	Rename resource 'join.css'
+1588603937043	Rename resource 'public_icon.jpg'
+1588603991573	Copy file
+1588661865890	Delete elements
+1588661963153	Delete element
+1588662137515	Rename package 'com.capston.mtbcraft.domain'
+1588662149488	Rename package 'com.capston.mtbcraft'
+1588662156021	Rename package 'com.capston.mtbcraft.config'
+1588662162600	Rename package 'com.capston.mtbcraft.controller'
+1588662167503	Rename package 'com.capston.mtbcraft.dao'
+1588662172401	Rename package 'com.capston.mtbcraft.jpa'
+1588662176314	Rename package 'com.capston.mtbcraft.service'
+1588663201638	Copy package
+1588663356502	Rename package 'com.mtbcraft.dto'
+1588663908942	Copy compilation unit
+1588668427775	Delete element
+1588668428909	Delete element
+1588668557437	Delete element
+1588668653586	Delete element
+1588668699122	Delete element
+1588670111326	Rename compilation unit 'Member.java'
+1588670126331	Rename compilation unit 'MemberModel.java'
+1588677830280	Rename compilation unit 'StorageFileNotFoundException.java'
+1588678057959	Delete elements
+1588678639636	Delete element
+1588678643390	Delete element
+1588686687029	Rename resource 'adress'
+1588686693242	Delete element
+1588688388288	Delete element
+1588691491137	Copy file
+1588691811929	Delete element
+1588692358082	Delete element
+1588692368431	Copy file
+1588694479924	Delete element
+1588728920582	Rename type 'DBAuthenticationProvoder'
+1588735351200	Delete element
+1588735352598	Delete element
+1588735355296	Delete element
+1588740847283	Delete element
+1588743927011	Rename compilation unit 'WebSecurityConfig.java'
+1588743956942	Delete element
+1588744094967	Copy compilation unit
+1588744120699	Copy compilation unit
+1588744439457	Delete element
+1588745033307	Delete element
+1588750529116	Rename type 'HomeMapper'
+1588750597272	Delete element
+1588750667365	Delete element
+1588750710744	Delete element
+1588766946775	Delete element
+1588767077192	Delete element
+1588767456182	Delete element
+1588767749245	Delete element
+1588768083613	Delete element
+1588769177440	Copy compilation unit
+1588769331341	Delete element
+1588771421166	Copy file
+1588776348887	Delete element
+1588776355596	Copy compilation units
+1588776571041	Delete element
+1588776584979	Delete element
+1588777487659	Delete element
+1588778096476	Delete element
+1588778792754	Rename type 'LoginEntity'
+1588778852551	Delete element
+1588778853971	Delete element
+1588778866453	Delete element
+1588780310305	Delete element
+1588780754925	Delete element
+1588780762365	Delete element
+1588780765697	Delete element
+1588780767961	Delete element
+1588780771099	Delete element
+1588781551252	Delete element
+1588829684903	Delete element
+1588830268273	Delete element
+1588836402456	Rename package 'com.mtbcraft.model'
+1588836413287	Rename package 'com.mtbcraft.dao'
+1588836513666	Rename type 'MemberDao'

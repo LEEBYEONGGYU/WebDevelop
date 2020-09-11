@@ -1,0 +1,5 @@
+package com.busyvacation.happyclass.db.mapper;
+
+public interface UserMapper {
+
+}

@@ -1,0 +1,27 @@
+package yju.wdb.test;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.apache.log4j.Logger;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import yju.wdb.service.BoardService;
+
+@RunWith(SpringRunner.class)
+@ContextConfiguration("file:src/main/webfile:srcfile:src/main/webapp/WEB-INF/spring/root-context.xml")
+public class BoardServiceTest {
+	Logger log = Logger.getLogger(BoardServiceTest.class);
+	@Autowired
+	private BoardService service;
+	
+	@Test
+	public void testExist() {
+		log.info(service);
+		assertNotNull(service);
+	}
+	
+}

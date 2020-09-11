@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+#sub_img {
+	background:url("/imgs/sub_visual.jpg") no-repeat;
+	background-size: 100%;
+	max-width:100%;
+	height:300px;
+	background-attachment: fixed;
+}
+#member_sel {
+	width:500px;
+	height:200px;
+	margin-top:50px;
+}
+
+#member_sel_box {
+	margin-top: 50px;
+	text-align: center;
+	width: 1200px;
+	position: relative;
+	font: 50px 'malgun gothic';
+}
+
+#general_mem{
+	width:200px;
+	height:200px;
+	border:solid 2px ;
+	background:url("/imgs/general_icon.jpg") no-repeat;
+	background-size: 70%;
+	background-position:50% 0%;
+	text-align:center;
+	padding-top:150px;
+	float:left;
+}
+
+#repair_mem{
+	width:200px;
+	height:200px;
+	border:solid 2px ;
+	background:url("/imgs/repair_icon.jpg") no-repeat;
+	background-size: 70%;
+	background-position:50% 0%;
+	text-align:center;
+	padding-top:150px;
+	float:right;
+}
+
+#join_form{
+	width:600px;
+	margin-top:30px;
+}
+
+/*서브페이지 공통 */
+#sub_area {
+	width:100%;
+	margin-top:30px;
+}
+#left_menu {
+	width:300px;
+	float:left;
+}

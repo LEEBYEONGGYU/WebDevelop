@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jsp_191104_mvc&apos; to &apos;jsp191104_mvc&apos;" description="Rename resource &apos;jsp_191104_mvc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/jsp_191104_mvc" name="jsp191104_mvc" stamp="1572833824277" updateReferences="true"/>
+</session>

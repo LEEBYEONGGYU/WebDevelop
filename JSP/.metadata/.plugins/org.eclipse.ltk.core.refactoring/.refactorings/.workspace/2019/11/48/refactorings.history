@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;timemarket&apos; to &apos;timemarket_front&apos;" description="Rename resource &apos;timemarket&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/timemarket" name="timemarket_front" stamp="1574941095792" updateReferences="true"/>
+</session>

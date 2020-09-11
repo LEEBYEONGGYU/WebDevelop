@@ -1,0 +1,27 @@
+package yju.wdb.exception;
+
+import java.sql.SQLException;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class CommonExceptionAdvice {
+
+	@ExceptionHandler(SQLException.class)
+	public String except(Exception ex, Model model) {
+		System.out.println("Exception Hander except invoked.");
+		model.addAttribute("exception", ex);
+		return "sample/error_page";
+		
+	}
+	
+	/*
+	@ExceptionHandler(NullPointerException.class)
+	public String except() {
+		
+		return "";
+	}
+	*/
+}

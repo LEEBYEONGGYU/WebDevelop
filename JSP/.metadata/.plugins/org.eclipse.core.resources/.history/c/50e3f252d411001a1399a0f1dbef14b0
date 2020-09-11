@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>TIME MARKET</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<!-- HEADER -->
+	<header>
+		<div id="header_in">
+			<div id="nav_bt">
+				<ul>
+					<li class="sear_bt"><img src="imgs/search_b.png" alt="search_b" title="search_b" class="se_bt" /></li>
+					<li><img src="imgs/shop_bt.png" alt="shop_bt" title="shop_bt"/></li>
+					<li class="login_bottom2"><img src="imgs/sign_bt.png" alt="sign_bt" title="sign_bt" /></li>
+				</ul>
+			</div>
+			<div id="logo">TIME MARKET</div>
+			<nav>
+				<ul>
+					<li><a href="page/about/about.html">ABOUT</a></li>
+					<li><a href="page/product/sale/sale.html">SALE</a></li>
+					<li><a href="page/product/sale/product.html">PRODUCT</a></li>
+					<li><a href="page/board/board.html">BOARD</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+<!--로그인 폼-->
+<div class="join_frm2" id="login_2">
+	<form action="" method="post">
+		<div id="in_box" class="idpw_box">
+			<input type="text" name="userid" maxlength="20" placeholder="사용자 아이디" required />
+			<input type="password" name="userpw" maxlength="20" placeholder="사용자 비밀번호" required/>
+		</div>
+		<span id="idpw_find"><a href="#">아이디나 비밀번호를 잊어버리셨나요?</a></span>
+		<span id="join_mem"><a href="#">회원가입</a></span>
+		<div id="log_box_bot">
+			<button>LOGIN</button>
+		</div>
+	</form>
+</div>
+<!-- HEADER END -->

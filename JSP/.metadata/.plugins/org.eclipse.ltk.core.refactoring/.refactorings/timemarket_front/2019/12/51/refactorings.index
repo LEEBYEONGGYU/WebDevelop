@@ -1,0 +1,70 @@
+1576417947429	Copy file
+1576417996762	Delete element
+1576418502358	Copy elements
+1576418515368	Copy files
+1576418536197	Copy file
+1576418545752	Copy file
+1576460953319	Delete element
+1576460959266	Delete element
+1576460967360	Delete element
+1576460981057	Delete element
+1576460984345	Delete element
+1576460985475	Delete element
+1576461128199	Rename resource 'mem_admin.jsp'
+1576461137874	Rename resource 'product_form.jsp'
+1576461145223	Rename resource 'productop_form.jsp'
+1576461153408	Rename resource 'qa_ad_ok.jsp'
+1576461157907	Rename resource 'qa_admin.jsp'
+1576461163196	Rename resource 'qa_read.jsp'
+1576461170316	Rename resource 'upproduct_ok.jsp'
+1576461176885	Rename resource 'upproduct.jsp'
+1576461184969	Rename resource 'upproductop_ok.jsp'
+1576463009962	Copy compilation unit
+1576463016673	Rename type 'admin_productBean'
+1576463022117	Rename type 'admin_productdata'
+1576463912261	Rename type 'Admin_productdata'
+1576463916398	Rename compilation unit 'Admin_productBean.java'
+1576494989226	Copy compilation unit
+1576494993986	Copy compilation unit
+1576550738563	Copy file
+1576567588015	Move 3 resources to 'board'
+1576567603300	Delete element
+1576567608952	Delete element
+1576567624466	Move 'modify_ok.jsp' to 'board'
+1576567633342	Move 'qaboard.jsp' to 'board'
+1576567732983	Copy compilation units
+1576568743166	Rename type 'admin_memberAction'
+1576568799387	Delete element
+1576568818610	Delete element
+1576568860719	Delete element
+1576568888271	Rename package 'timeshop.command'
+1576568899628	Rename package 'timeshop.command45'
+1576568903657	Delete elements
+1576568909051	Delete element
+1576568912112	Delete elements
+1576576964909	Delete element
+1576663673583	Rename resource 'mypage_info.jsp'
+1576663687803	Rename resource 'mypage.jsp'
+1576664425980	Rename resource 'bas_guok.jsp'
+1576664430873	Rename resource 'gumelist.jsp'
+1576664598737	Rename resource 'mem_gumelist.jsp'
+1576664707684	Rename resource 'qaboard.jsp'
+1576720644633	Rename resource 'login_ok.jsp'
+1576720853866	Rename resource 'login_ok3.jsp'
+1576721526482	Delete element
+1576721534145	Delete element
+1576742616191	Rename resource 'board_myqa.jsp'
+1576742618863	Move 'mem_myqa.jsp' to 'member'
+1576742782148	Rename resource 'modify_ok.jsp'
+1576742792917	Rename resource 'qadelete.jsp'
+1576742797664	Rename resource 'qamodify.jsp'
+1576742802908	Rename resource 'read.jsp'
+1576742807539	Rename resource 'write_ok.jsp'
+1576748608825	Copy compilation unit
+1576748624319	Copy compilation unit
+1576748644229	Copy compilation unit
+1576749074446	Move 'mem_menu.jsp' to 'page'
+1576750121099	Rename resource 'mem_menu.jsp'
+1576827119473	Rename resource 'basket_ok.jsp'
+1576827127008	Rename resource 'gume_ok.jsp'
+1576827138565	Rename resource 'sale.jsp'

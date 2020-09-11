@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="login.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	//id 세션 속성의 값을 얻어내서 id 변수에 저장
+	//인증된 사용자의 경우 id세션 속성의 값 null 또는 공백이 아님
+	String id="";
+	try{
+		id=(String)session.getAttribute("id");
+	%>
+	
+	<%if(id == null || id.equals("")){%>
+		<div id="status">
+			<ul>
+				<li><label for="id">아이디</label>
+					<input id="id" name="id" type="email" size="20" maxlength="50" placeholder="example@kings.com">
+				<li><label for="passwd">비밀번호</label>
+					<input id="passwd" name="passwd" type="password" size="20" placeholder="6~16자 숫자/문자" maxlength="16">
+				<li class="label2">
+					<button id="login">로그인</button>
+			</ul>
+		</div>
+		<%}else{ %>
+		<div id="status">
+		<ul>
+		<li><b><%=id %></b>님이 로그인 하셨습니다.
+		<li class="label2"><button id="logout">로그아웃</button>
+		</ul>
+		</div>
+		<%}}catch(Exception e){e.printStackTrace();} %>
+</body>
+</html>

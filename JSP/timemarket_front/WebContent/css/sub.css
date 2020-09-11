@@ -1,0 +1,360 @@
+/* �꽌釉� 肄섑뀗痢� */
+#sub_content {
+	width: 100%;
+	position: relative;
+	margin-top:30px;
+}
+
+/* �꽌釉� 肄섑뀗痢� �궡遺� */
+#sub_content_in{
+	width:1200px;
+	position:relative;
+}
+/* �꽌釉� 肄섑뀗痢� �젣紐� */
+#sub_con_t {
+	font:30px 'malgun gothic';
+	color:#333;
+}
+
+/* �꽌釉� 肄섑뀗痢� �궡�슜 */
+#sub_con_t2{
+	font:bold 18px 'malgun gothic';
+	color:gray;
+}
+
+/*PRODUCT �럹�씠吏�*/
+.ja_name {
+	font-size:32px;
+	font-weight:bold;
+	position:absolute;
+	left:15px;
+	top:17px;
+	
+}
+.ja_info {
+	font-size:16px;
+	position:absolute;
+	left:30px;
+	top:60px;
+}
+.ja_img {
+	width:160px;
+	height:160px;
+	position:absolute;
+	top:30px;
+	right:30px;
+}
+
+.ja_price {
+	font:bold 26px 'malgun gothic';
+	color:red;
+	position:absolute;
+	left:20px;
+	bottom:40px;
+}
+.ja_endtime {
+	font-size:20px;
+	font-weight:bold;
+	position:absolute;
+	bottom:10px;
+	left:20px;
+}
+.ja_suco {
+	font-size:20px;
+	font-weight:bold;
+	position:absolute;
+	bottom:10px;
+	right:20px;
+}
+
+/* �긽�꽭 �럹�씠吏�*/
+#pro_infoimg{
+	width:500px;
+	height:400px;
+	margin-left:0;
+	display:inline-block;
+	
+}
+#pro_infobox {
+	width:500px;
+	height:400px;
+	position:absolute;
+	background:#e7e7e7;
+	top:0;
+	right:0;
+}
+#pro_infocode {
+	position:absolute;
+	top:10px;
+	right:50px;	
+}
+#pro_infoprice {
+	font-size:31px;
+	margin-top:20px;
+}
+#pro_infentime {
+	font-size:28px;
+	margin-top:10px;
+}
+
+#pro_infocontent{
+	width:100%;
+}
+#pro_infoopt {
+	font-size:16px;
+	line-height:40px;
+}
+#pro_infototal {
+	ont-size:16px;
+}
+#pro_infototal > ul > li {
+	float:left;
+	margin-left:30px;
+}
+
+/* 怨좉컼�꽱�꽣 */
+#consume_in {
+	margin-top:30px;
+	text-align:center;
+	margin-left:-50px;
+	
+}
+#consume_in > img {
+	margin-left:150px;
+}
+#qa_icon {
+	display:none;
+}
+
+/* 臾몄쓽 湲� �옉�꽦 */
+#board_write {
+	width:900px;
+	margin-top:60px;
+	position:relative;
+	display:none;
+}
+#write_area {
+	margin-top:70px;
+	font-size:14px;
+	}
+.wi_line {
+	border:solid 1px lightgray;
+	margin-top:10px;
+}
+.in_text textarea{
+	font-weight:bold;
+	font:26px 'malgun gothic';
+	color:#333;
+	width: 900px;
+	border:none;
+	resize: none;
+	margin-top:30px;
+}
+.bt_se {
+	margin-top:20px;
+	text-align:center;
+}
+.bt_se button {
+	width:100px;
+	height:30px;
+}
+#in_file {
+	margin-top:10px;
+}
+
+/* 留덉씠�럹�씠吏� */
+#sub_content_my {
+	width: 100%;
+	border-bottom:solid 1px #c6c6c6;
+	position: relative;
+	margin-top:30px;
+	height:108px;
+	background:#f1f3f4;
+}
+#mymenu {
+	top:0;
+	right:0;
+	position:absolute;
+	
+}
+#menu_selbg {
+	background:white;
+}
+#my_basket {
+	background:url("../imgs/my_basket.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_basket:hover {
+	background:url("../imgs/my_basket_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_gume {
+	background:url("../imgs/my_gume.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_gume:hover {
+	background:url("../imgs/my_gume_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_qa {
+	background:url("../imgs/my_qa.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_qa:hover {
+	background:url("../imgs/my_qa_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_info {
+	background:url("../imgs/my_info.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_info:hover {
+	background:url("../imgs/my_info_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#my_content {
+	width:1200px;
+}
+
+/* 怨듯넻 board */
+.list-table {
+	margin-top: 40px;
+	position: relative;
+	
+}
+.list-table thead th{
+	height:40px;
+	border-top:2px solid #09C;
+	border-bottom:1px solid #CCC;
+	font-weight: bold;
+	font-size: 17px;
+}
+.list-table tbody td{
+	text-align:center;
+	padding:10px 0;
+	border-bottom:1px solid	 #CCC; height:20px;
+	font-size: 14px 
+}
+
+/* 愿�由ъ옄 �럹�씠吏� 硫붾돱 */
+#ad_proout {
+	background:url("../imgs/ad_pan.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#ad_proout:hover {
+	background:url("../imgs/ad_pan_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#ad_proup {
+	background:url("../imgs/sam_upbt.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#ad_proup:hover {
+	background:url("../imgs/sam_upbt_hover.png") no-repeat;
+	width:122px;
+	height:108px;
+}
+#qa_admin {
+	background:url("../imgs/qa_dat.png") no-repeat;
+	width:67px;
+	height:88px;
+}
+#qa_admin:hover {
+	background:url("../imgs/qa_dap_hover.png") no-repeat;
+	width:67px;
+	height:88px;
+}
+#ad_mem {
+	background:url("../imgs/ad_mem.png") no-repeat;
+	width:67px;
+	height:88px;
+	margin-right:20px;
+}
+#ad_mem:hover {
+	background:url("../imgs/qa_mem_hover.png") no-repeat;
+	width:67px;
+	height:88px;
+}
+/* �긽�뭹 �벑濡� */
+.in_date{
+	font:26px 'malgun gothic';
+}
+.in_date textarea{
+	font-weight:bold;
+	font:26px 'malgun gothic';
+	color:#333;
+	width: 400px;
+	border:none;
+	resize: none;
+	display:inlie-block;
+}
+
+/* 寃뚯떆�뙋 read */
+#user_info {
+	font-size:16px;
+	margin-top:5px;
+}
+#user_info ul li {
+	float:left;
+	margin-left:10px;
+}
+#bo_line {
+	width:900px;
+	height:2px;
+	background: gray;
+	margin-left: 0;
+	margin-top:15px;
+}
+#bo_content {
+	margin-top:20px;
+}
+#bo_ser {
+	font-size:14px;
+	color:#333;
+	float:right;
+	
+}
+#bo_ser > ul > li {
+	float:left;
+	margin-left:10px;
+}
+
+/* 寃뚯떆�뙋 �닔�젙 */
+#modify_area{
+	width:900px;
+	margin-top:60px;
+	position:relative;
+	
+}
+#modify_write{
+	width:900px;
+	margin-top:60px;
+	position:relative;
+	
+}
+#qa_sta {
+	width:1160px;
+	background:#e4e4e4;
+	margin-top:50px;
+	padding:20px;
+}
+#qaboline {
+	width:1160px;
+	height:2px;
+	background:gray;
+	margin-top:20px;
+}
+#qaatext {
+	margin-top:20px;
+}

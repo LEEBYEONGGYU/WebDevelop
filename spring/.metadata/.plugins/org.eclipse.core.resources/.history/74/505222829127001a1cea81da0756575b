@@ -1,0 +1,6 @@
+package com.newdecem.controller;
+
+@Controller
+public class WebController {
+
+}

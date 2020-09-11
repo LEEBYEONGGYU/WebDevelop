@@ -1,0 +1,20 @@
+package yju.wdb.test;
+
+import org.apache.log4j.Logger;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import yju.wdb.service.BoardService;
+
+public class BoardServiceTest {
+	Logger log = Logger.getLogger(BoardServiceTest.class);
+	
+	@Autowired
+	private BoardService service;
+	
+	@Test
+	public void testExist() {
+		log.info(service)
+	}
+	
+}

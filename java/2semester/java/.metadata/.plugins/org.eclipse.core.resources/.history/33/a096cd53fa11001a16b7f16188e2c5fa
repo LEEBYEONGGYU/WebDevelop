@@ -1,0 +1,22 @@
+
+
+import java.sql.*;
+
+import javax.swing.JOptionPane;
+
+public class DBManager {
+	Connection con;
+	Statement stmt;
+	PreparedStatement psmt;
+	ResultSet rs;
+	String dbid = "";
+	String dbpw = "";
+	String sql="";
+	public DBManager(String text) {
+		
+		
+	}
+
+	
+	}
+}

@@ -1,0 +1,13 @@
+package yju.wdb.mapper;
+
+import java.util.List;
+
+// import org.apache.ibatis.annotations.Select;
+
+import yju.wdb.domain.BoardVO;
+
+public interface BoardMapper {
+
+	// @Select("select * from tbl_board")
+	public List<BoardVO> getlist();
+}

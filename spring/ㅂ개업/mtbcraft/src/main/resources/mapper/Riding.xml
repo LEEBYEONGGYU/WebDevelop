@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtbcraft.mapper.AndroidMapper">
+	<select id="insertRecord" resultType="com.mtbcraft.dto.RidingRecord">
+		insert into riding_record
+		(rr_rider, rr_date, rr_distance, rr_topspeed, rr_avgspeed, rr_high, rr_gpx, rr_open, rr_breaktime, rr_time, rr_area) 
+		values
+		(
+		#{rr_rider,jdbcType=VARCHAR},
+		#{rr_date,jdbcType=TIMESTAMP},
+		#{rr_distance,jdbcType=INTEGER},
+		#{rr_topspeed,jdbcType=INTEGER},
+		#{rr_avgspeed,jdbcType=INTEGER},
+		#{rr_high,jdbcType=INTEGER},
+		#{rr_gpx,jdbcType=VARCHAR},
+		#{rr_open,jdbcType=INTEGER},
+		#{rr_breaktime,jdbcType=INTEGER},
+		#{rr_time,jdbcType=INTEGER},
+		#{rr_area,jdbcType=VARCHAR}
+		)
+	</select>
+	
+	<select id="getRidingRecordDetail" parameterType="Map" resultType="com.mtbcraft.dto.RidingRecord">
+		select * from riding_record where rr_rider = '#{rr_rider}' and rr_num = '#{rr_num}'
+	</select>
+	
+</mapper>

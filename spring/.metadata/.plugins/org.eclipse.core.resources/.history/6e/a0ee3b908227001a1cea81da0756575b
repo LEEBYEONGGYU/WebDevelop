@@ -1,0 +1,5 @@
+package om.busyvacation.happyclass.config;
+
+public class DatabaseConfig {
+
+}

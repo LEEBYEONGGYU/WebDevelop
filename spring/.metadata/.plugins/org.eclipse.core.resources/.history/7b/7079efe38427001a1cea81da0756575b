@@ -1,0 +1,18 @@
+package com.busyvacation.happyclass.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class WebController {
+	@RequestMapping(value="/home")
+	public String home() {
+		return "home";
+	}
+	
+	@RequestMapping("/test")
+	public String test(Model model) {
+		
+	}
+	
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, link, content)">
+<head>
+<meta charset="UTF-8">
+<title>메인</title>
+<link rel="stylesheet" type="text/css" href="http://developtest.org/common.css" />
+</head>
+<body>
+<div id="board_area"> 
+	<h1>Spring Board</h1>
+	<form action="" method="post">
+		아이디 : <input type="text" name="username" />
+		비밀번호 : <input type="password" name="userpw "/>
+		<input type="submit" value="로그인" />
+	</form>
+	<a href="join"><button>회원가입</button></a>
+	 <table class="list-table">
+      <thead>
+          <tr>
+              <th width="70">idx</th>
+              <th width="160">postid</th>
+              <th width="200">title</th>
+              <th width="160">memberid</th>
+              <th width="220">indate</th>
+            </tr>
+        </thead>
+       <tbody>
+		<tr th:each="i : ${list}">
+			<td th:text="${i.idx}"></td>
+			<td th:text="${i.postid}"></td>
+			<td ><a th:href="@{'posts/'+${i.idx}}"><span th:text="${i.title}"></span></a></td>
+			<td th:text="${i.memberid}"></td>
+			<td th:text="${i.indate}"></td>
+		</tr>
+      </tbody>
+    </table>
+    <a href="posts/"><button>글쓰기</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	th:replace="~{layout::layout(~{::title}, ~{::link}, ~{::section})}">
+<head>
+<title>Login</title>
+<link rel="stylesheet" th:href="@{main.css}">
+</head>
+<body>
+sdfsdf
+	<section>
+		<div th:if="${param.error}">Failed. Check userId and password.</div>
+		<form th:action="@{/login}" method="post">
+			User ID <input type="text" name="username" /><br> Password<input
+				type="password" name="password"><br> <input
+				type="submit" value="Login" />
+		</form>
+	</section>
+</body>
+</html>

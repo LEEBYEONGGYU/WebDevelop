@@ -1,0 +1,60 @@
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.*;
+public class multi extends JFrame {
+	Image img = null;
+	private Font f1,f2,f3,f4;
+	Connection con;
+	Statement stmt;
+	PreparedStatement psmt;
+	ResultSet rs;
+	
+	public multi() {
+		JPanel panel = new JPanel();
+		panel.setLayout(null); //
+		JLabel label = new JLabel("멀티모드 선택");
+		f1 = new Font("Malgun gothic",Font.BOLD,27);
+		label.setFont(f1);
+		
+		JButton bt = new JButton("방 만들기");
+		JButton bt2 = new JButton("방 참여하기");
+		
+		label.setBounds(215, 165, 300, 50);
+		bt.setBounds(132,256,155,45);
+		bt2.setBounds(413,256,155,45);
+		add(label);
+		add(bt);
+		add(bt2);
+		add(panel);
+		setSize(700,600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("게임모드 선택");
+		setVisible(true);
+		
+		bt.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new Servertest();
+			}
+		});
+		
+		bt2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new client();
+				
+			}
+			
+		});
+	}
+}

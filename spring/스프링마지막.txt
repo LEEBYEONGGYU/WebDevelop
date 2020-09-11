@@ -1,0 +1,13 @@
+spring.jap.generate-ddl=true
+
+JPA를 이용한 테이블 생성
+1:N, M:N, 등
+
+Test Runner 사용해보기
+Postman 등의 앱을 통해
+http request를 헤더 수정이나 각종 메소드로 다양하게 테스트 해보기
+git 사용
+
+material.io
+am chart
+webclor

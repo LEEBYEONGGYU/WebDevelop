@@ -1,0 +1,5 @@
+package com.busyvacation.happyclass.db.dto;
+
+public class User {
+
+}

@@ -1,0 +1,35 @@
+@charset "EUC-KR";
+
+/* 공통 */
+* {margin:0 auto; padding:0; vertical-align:top;}
+a {text-decoration:none;}
+ul li {list-style:none;}
+input {height:30px; }
+.set_bt {position:absolute; bottom:0; padding:5px 10px 5px 10px;}
+.mini_img {position:absolute; top:50px;  left:240px; }
+.fl {float:left;}
+.ra_bt {margin-top:100px;}
+.scen {width:400px; height:230px; border:solid 2px blue; position:relative;}
+.set_bt_ma {position:absolute; bottom:0; left:70px;  padding:5px 10px 5px 10px;}
+
+/* 로그인 폼 */
+#login {margin-top: 20px; position:relative; width:350px; height:200px; border:solid 2px blue; }
+#lo_form {text-align:center;  margin-top:20px;  }
+#lo_id {font:16px 'malgun gothic'; margin-left:13px;}
+#lo_id input {height:30px;}
+#lo_pw {font:16px 'malgun gothic'; margin-top:10px; }
+#lo_pw input {height: 30px;}
+#lo_bt {margin-top:10px; padding:5px 10px 5px 10px; }
+
+/* 셋티 폼*/
+#setform_ch {margin-top:10px; }
+
+/* 메인 */
+#m_txt {margin-left:15px; margin-top:10px; line-height:25px;}
+
+/*sc1*/
+#sc1_radio {margin-top:30px; margin-left:20px; }
+.ra_t {position:absolute; margin-top:5px;}
+
+/* sc4*/
+#sc4_ra {line-height:30px; margin-left:20px; }

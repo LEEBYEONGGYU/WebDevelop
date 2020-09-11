@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+th:fragment="layout(title, link, content)">
+<head>
+<meta charset="UTF-8">
+<title th:replace="${title}"></title>
+<!-- 공통 파일 -->
+<script type="text/javascript"
+	th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+<!-- 각 파일들 개별 추가 항목 -->
+
+</head>
+<body>
+	<h2></h2>
+	<h2>Happy Class</h2>
+<a href="/" th:href="@{/}">Home</a>
+<a href="/" th:href="@{/user/}">User</a>
+<a href="/" th:href="@{/files}">Files</a>
+<a href="/" th:href="@{/test}">Test</a>
+<br><br>
+<div th:replace="${content}"></div>
+	<th:block sec:authorize="isAuthenticated()">
+		<span sec:authentication="principal.username"></span>님 반가워요!
+			<form action="/logout" method="post">
+			<input type="hidden" th:name="${_csrf.parameterName}"
+				th:value="${_csrf.token}"> <input type="submit"
+				value="Logout">
+		</form>
+	</th:block>
+</body>
+</html>

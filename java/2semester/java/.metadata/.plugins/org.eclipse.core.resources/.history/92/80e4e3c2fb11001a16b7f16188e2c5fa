@@ -1,0 +1,79 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class MemberAdd extends JFrame {
+	//공통 변수
+	Connection con;
+	Statement stmt;
+	PreparedStatement psmt;
+	ResultSet rs;
+	
+	//생성자
+	public MemberAdd(){
+		  	JPanel p = new JPanel();
+		  	Label l1= new Label("ID");	
+	        Label l2 = new Label("PW");
+	        Label l3= new Label("NAME");
+	        add(l1);
+	        add(l2);
+	        add(l3);
+	        TextField t1 = new TextField();
+	        JPasswordField t2 = new JPasswordField();
+	        TextField t3 = new TextField();
+	        add(t1);
+	        add(t2);
+	        add(t3);
+	        JButton j1 = new JButton("저장");
+	        JButton j2 = new JButton("취소");
+	        add(j1);
+	        add(j2);
+	        l1.setBounds(40, 10, 40, 40);
+	        l2.setBounds(40, 50, 40, 40);
+	        l3.setBounds(40,90,60,40);
+	        
+	        t1.setBounds(120, 10, 200, 30);
+	        t2.setBounds(120, 50, 200, 30);
+	        t3.setBounds(120, 90, 200, 30);
+
+	        j1.setBounds(125, 150, 80, 30);
+	        j2.setBounds(240, 150, 80, 30); 
+	        
+	    add(p);
+		setSize(500,270);
+		setTitle("회원가입");
+        setDefaultCloseOperation(JPanel.WHEN_IN_FOCUSED_WINDOW);
+       setVisible(true);
+       j1.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent T) {// 저장버튼 클릭시
+			DBManager dbManager;
+			dbManager = new DBManager();
+			dbManager.memberadd();
+			System.out.println("입력한 아이디 "+t1.getText());
+			System.out.println("입력한  비밀번호 "+t2.getText());
+			System.out.println("입력한  이름"+t3.getText());
+		}
+	});
+       
+       //취소 버튼 눌렀을 시
+       j2.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			dispose();
+		}
+       });
+	}
+}
+

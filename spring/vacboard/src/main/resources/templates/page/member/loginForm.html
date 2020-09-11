@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+</head>
+<body>
+	<div id="wrap">
+	<div id="wrap_in">
+		<div id="mem_t">Member Login</div>
+		<!--- MemberLogin 텍스트와 input태그 사이 줄 긋기 -->
+		<div id="mem_li"></div>
+		<div th:if="${param.error}">Failed. CCheck userId and password.</div>
+		<form action="@{loginOk}" method="post">
+		<div id="in_box" class="idpw_box">
+			<input type="text" name="username" maxlength="20" placeholder="사용자 아이디" required />
+			<input type="password" name="userpw" maxlength="20" placeholder="사용자 비밀번호" required/>
+		</div>
+		<span id="idpw_find"><a href="#">아이디나 비밀번호를 잊어버리셨나요?</a></span>
+		<span id="join_mem"><a href="joinForm" th:href="@{/joinForm}">회원가입</a></span>
+		<div id="log_box_bot">
+			<button>LOGIN</button>
+		</div>
+	</form>
+</div><!--- wrap_in end -->
+</div><!--- wrap end -->
+</body>
+</html>

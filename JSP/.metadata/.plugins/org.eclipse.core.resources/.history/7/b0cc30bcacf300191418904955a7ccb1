@@ -1,0 +1,10 @@
+var status true;
+
+$(document).ready(function(){
+	$("#login").click(function(){
+		checkIt();
+		if(status){
+			var query = {id:$("#id").val(), passwd:$("#passwd").val()}
+		}
+	})
+})

@@ -1,0 +1,29 @@
+package om.busyvacation.happyclass.config;
+
+import javax.sql.DataSource;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+@Configuration
+@PropertySource("classpath:/application.properties")
+@MapperScan(basePackages = "com.busyvacation.happyclass.db.mapper")
+public class DatabaseConfig {
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Bean
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean sqlBean = new SqlSessionFactoryBean();
+		sqlBean.setDataSource(dataSource);
+		sqlBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/*.xml"));
+		return sqlBean.getObject();
+	}
+
+@Bean
+public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+return new SqlSessionTemplate(sqlSessionFactory);
+}

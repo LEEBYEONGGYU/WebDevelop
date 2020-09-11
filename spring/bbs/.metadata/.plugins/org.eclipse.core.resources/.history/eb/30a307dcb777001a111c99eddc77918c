@@ -1,0 +1,7 @@
+package yju.wdb.test;
+
+public class BoardServiceTest {
+	
+	private BoardService service;
+	
+}

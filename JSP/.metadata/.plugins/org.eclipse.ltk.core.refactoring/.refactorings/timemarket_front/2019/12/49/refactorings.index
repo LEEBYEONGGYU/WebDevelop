@@ -1,0 +1,24 @@
+1575282158277	Rename resource 'about.html'
+1575282166077	Rename resource 'product.html'
+1575282169775	Rename resource 'sale.html'
+1575284080400	Rename resource 'member_ok.jsp'
+1575474063036	Rename resource 'my_basket_hoverpng.png'
+1575476269833	Rename resource 'myinfo.jsp'
+1575476278884	Rename resource 'mypage_info'
+1575534886180	Rename resource 'member.jsp'
+1575626928457	Copy elements
+1575647712278	Copy file
+1575650130673	Rename resource 'delete.jsp'
+1575652373226	Delete elements
+1575652507656	Move 'admin.jsp' to 'admin'
+1575652520655	Move 'upproduct.jsp' to 'admin'
+1575715267809	Rename resource 'product_ok.jsp'
+1575735331891	Rename resource 'gume.jsp'
+1575741129847	Rename package 'timemarket_front'
+1575741132920	Copy package
+1575741135770	Delete element
+1575741196368	Rename package 'member'
+1575742347249	Rename package 'shop.member'
+1575742354068	Move compilation unit
+1575742358209	Rename type 'joinBean'
+1575742361592	Rename type 'upproductBean'

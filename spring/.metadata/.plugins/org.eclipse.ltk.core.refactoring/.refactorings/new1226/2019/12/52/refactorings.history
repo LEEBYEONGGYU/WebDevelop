@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.busyvacation.happyclass&apos; to &apos;com.newdecem&apos;&#x0D;&#x0A;- Original project: &apos;new1226&apos;&#x0D;&#x0A;- Original element: &apos;new1226/src/main/java/com.busyvacation.happyclass&apos;&#x0D;&#x0A;- Renamed element: &apos;new1226/src/main/java/com.newdecem&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.busyvacation.happyclass&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.busyvacation.happyclass" name="com.newdecem" qualified="false" references="true" stamp="1577331594401" textual="false" version="1.0"/>
+</session>

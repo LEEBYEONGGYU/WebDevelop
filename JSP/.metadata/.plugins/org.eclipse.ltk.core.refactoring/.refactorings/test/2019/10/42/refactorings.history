@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;test/WebContent/makeCookie.jsp&apos; to &apos;sessionMake.jsp&apos;" description="Rename resource &apos;makeCookie.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/makeCookie.jsp" name="sessionMake.jsp" stamp="1571113063344" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;test/WebContent/useCookie.jsp&apos; to &apos;useSession.jsp&apos;" description="Rename resource &apos;useCookie.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/useCookie.jsp" name="useSession.jsp" stamp="1571113068792" updateReferences="true"/>
+</session>

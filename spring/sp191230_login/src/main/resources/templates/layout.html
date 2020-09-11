@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Home</h2>
+		<a href="/" th:href="@{/}">home</a>
+		<a href="/" th:href="@{/user/}">User</a>
+		<a href="/" th:href="@{/files}">Files</a>
+		<a href="/" th:href="@{/test}">Test</a>
+	<br /><br />
+	<div th:replace="${content}"></div>
+</body>
+</html>

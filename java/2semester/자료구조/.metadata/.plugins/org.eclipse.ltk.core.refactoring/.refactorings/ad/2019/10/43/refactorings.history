@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ad.WDB.java&apos; to &apos;Ex6_1.java&apos;&#x0D;&#x0A;- Original project: &apos;ad&apos;&#x0D;&#x0A;- Original element: &apos;ad.WDB.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ad.Ex6_1.java&apos;" description="Rename compilation unit &apos;WDB.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ad{WDB.java" name="Ex6_1.java" references="false" stamp="1571922404185" version="1.0"/>
+</session>

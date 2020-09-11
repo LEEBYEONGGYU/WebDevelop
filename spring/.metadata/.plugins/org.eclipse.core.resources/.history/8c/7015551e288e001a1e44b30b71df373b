@@ -1,0 +1,30 @@
+package com.capston.mtbcraft;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.capston.mtbcraft.domain.Member;
+import com.capston.mtbcraft.repository.MemberRepository;
+
+public class RepTest extends MtbcraftApplicationTests {
+	@Autowired
+	private MemberRepository memberRepository;
+	
+	@Test
+	public void insertMember() {
+		Member member = new Member();
+		
+		member.setR_ID("lee");
+		member.setR_PW("lee");
+		member.setR_NAME("bk");
+		member.setR_BIRTH("1997-12-17");
+		member.setR_PHONE("010-0000-0000");
+		member.setR_GENDER(0);
+		member.setR_ADDR("dd");
+		member.setR_ADDR2("ddd");
+		member.setR_TYPE(0);
+		
+		Member newMember = MemberRepository.save(member);
+	}
+	
+}

@@ -1,0 +1,34 @@
+@charset "EUC-KR";
+
+body {
+	background:-webkit-gradient(linear, left top, left bottom, from(#555), to(#fff));
+}
+
+header {
+	position:relative;
+	height:15%;
+}
+
+#content {
+	margin:-10px 9px 50px;
+	height:65%;
+	width:90%;
+}
+
+#areaMain{
+	width:70%;
+	float:right;
+	padding:10px 0;
+	background-color:#fff;
+	border-radius:8px;
+	-webkit-border-radius:8px; 
+	position:relatve;
+}
+
+#areaSub{
+	float:left;
+}
+footer {
+	clear:both;
+	height:15%; 
+}

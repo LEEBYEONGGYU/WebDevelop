@@ -1,0 +1,59 @@
+
+
+import java.sql.*;
+
+import javax.swing.JOptionPane;
+
+public class DBManager {
+	Connection con;
+	Statement stmt;
+	PreparedStatement psmt;
+	ResultSet rs;
+	String dbid = "";
+	String dbpw = "";
+	String sql="";
+	public DBManager() {
+		
+	}
+		public  connect() {
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","c##web","webuser");
+				stmt = con.createStatement();
+			} catch (Exception e) {
+				System.out.println("DB접속성공");
+			}
+		}
+		
+	}
+	
+	public static void memberadd(String uid) {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","c##web","webuser");
+			sql = "select * from member where userid=?";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1,uid);
+			rs = psmt.executeQuery();
+				while(rs.next()){
+					dbid = rs.getString("userid");
+					dbpw = rs.getString("userpw");
+				}
+			System.out.println(""+dbid);
+			System.out.println(dbpw);
+			
+			if(!dbid.equals("") && dbpw.equals(uid)) {
+				JOptionPane.showMessageDialog(null, "로그인 성공!");
+				psmt.close();
+				rs.close();
+				con.close();
+				SelectMode gl = new SelectMode(dbid);
+			}else {
+				JOptionPane.showMessageDialog(null, "아이디 및 비밀번호를 확인해주세요.", "로그인 실패", JOptionPane.ERROR_MESSAGE);
+			}
+		}catch(Exception e1) {
+			e1.printStackTrace();
+	}
+		
+	}
+}

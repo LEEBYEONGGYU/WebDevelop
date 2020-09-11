@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\GYU-DPC\Desktop"/>
+			<item value="C:\Users\GYU-DPC\Desktop\소켓통신을 이용한 2인용 보드게임Java"/>
+			<item value="C:\Users\GYU-DPC\Desktop\Halli_Galli"/>
+			<item value="C:\Users\GYU-DPC\Desktop\방송20191122"/>
+			<item value="C:\Users\GYU-DPC\Desktop\sample"/>
+			<item value="D:\1601184_bk\java\2semester\java"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>

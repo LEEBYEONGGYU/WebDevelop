@@ -1,0 +1,35 @@
+
+
+import java.sql.*;
+
+import javax.swing.JOptionPane;
+
+public class DBManager {
+	Connection con;
+	Statement stmt;
+	PreparedStatement psmt;
+	ResultSet rs;
+	String dbid = "";
+	String dbpw = "";
+	String sql="";
+
+
+	public DBManager() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","c##web","webuser");
+			stmt = con.createStatement();
+		} catch (Exception e) {
+			System.out.println("DB접속성공");
+		}
+	}
+	
+	public void memberadd(String uid) {
+		
+	}
+
+	public static void memberadd() {
+		// TODO Auto-generated method stub
+		
+	}
+}

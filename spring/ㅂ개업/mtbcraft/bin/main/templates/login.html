@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="header"></head>
+<div id="sub_img"></div>
+
+<div id="login_form">
+<h2>로그인</h2>
+<form th:action="@{/login}" method="post">
+	<div id="in_box" class="idpw_box">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
+			<input type="text" name="username" id="userid" maxlength="20" placeholder="사용자 아이디" required />
+			<input type="password" name="password" id="userpw" maxlength="20" placeholder="사용자 비밀번호" required/>
+		</div>
+		<span id="idpw_find"><a href="#">아이디나 비밀번호를 잊어버리셨나요?</a></span>
+		<span id="join_mem"><a href="/member/join_select">회원가입</a></span>
+		<div align="center" th:if="${param.error}">
+                <script>alert("아이디 및 비밀번호를 확인해주세요");</script>
+            </div>
+			<div id="log_box_bot">
+				<button type="submit" id="">LOGIN</button>
+			</div>
+		</form>
+</div>
+<footer th:replace="footer"></footer>

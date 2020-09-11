@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="mtbcraft"/>
+<aop-project name="sp191230_login"/>
+<aop-project name="happyclass"/>
+<aop-project name="boardwork"/>
+<aop-project name="sp191223"/>
+<aop-project name="sp191227"/>
+<aop-project name="vacboard"/>
+<aop-project name="dbtest"/>
+<aop-project name="new1226"/>
+<aop-project name="demo"/>
+<aop-project name="bbs"/>
+<aop-project name="sp191226"/>
+</aop-reference-model>

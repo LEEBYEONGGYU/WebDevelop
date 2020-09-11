@@ -1,0 +1,53 @@
+package yju.wdb.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import yju.wdb.domain.BoardVO;
+import yju.wdb.mapper.BoardMapper;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+
+	@Autowired
+	private BoardMapper mapper;
+	
+	/*
+	public BoardServiceImpl(BoardMapper mapper) {
+		this.mapper = mapper;
+	}
+	*/
+	
+	@Override
+	public void register(BoardVO board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public BoardVO get(int bno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modify(BoardVO board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(int bno) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

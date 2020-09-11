@@ -1,0 +1,146 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+public class Picture_Select extends JFrame {
+	private Font f1,f2,f3,f4;
+	private JPanel contentPane;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
+	private JButton btnNewButton_3;
+	private JButton btnNewButton_4;
+	private JButton btnNewButton_5;
+	private JButton btnNewButton_6;
+	private JButton btnNewButton_7;
+	private JButton btnNewButton_8;
+	private JButton btnNewButton_9;
+	/**
+	 * Launch the application.
+	 */
+
+	
+	public Picture_Select(String userid, int level) {
+		System.out.println("ee의"+userid);
+		System.out.println("레벨은"+level);
+		
+		f1 = new Font("Malgun gothic",Font.BOLD,20); 
+		JLabel label = new JLabel("사진선택"); 
+		label.setFont(f1);
+		getContentPane().add(label, BorderLayout.NORTH);
+		
+		JPanel panel = new JPanel();
+		getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setLayout(new GridLayout(3, 3, 0, 0));
+		
+		btnNewButton = new JButton(new ImageIcon("src/imgs/벛꽃나무 _bt.jpg"));
+		panel.add(btnNewButton);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("벛꽃나무",userid);
+			}
+		});
+		btnNewButton_2 = new JButton(new ImageIcon("src/imgs/영진전문대학교비석_bt.jpg"));
+		panel.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("영진전문대학교비석", userid);
+			}
+		});
+		
+		btnNewButton_3 = new JButton(new ImageIcon("src/imgs/은행잎_bt.jpg"));
+		panel.add(btnNewButton_3);
+		
+		btnNewButton_3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("은행잎", userid);
+			}
+		});
+		
+		btnNewButton_4 = new JButton(new ImageIcon("src/imgs/짝사랑글귀_bt.jpg"));
+		panel.add(btnNewButton_4);
+		
+		btnNewButton_4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("짝사랑글귀", userid);
+			}
+		});
+		
+		btnNewButton_5 = new JButton(new ImageIcon("src/imgs/강아지_bt.jpg"));
+		panel.add(btnNewButton_5);
+		
+		btnNewButton_5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("강아지", userid);
+			}
+		});
+
+		btnNewButton_6 = new JButton(new ImageIcon("src/imgs/별 _bt.jpg"));
+		panel.add(btnNewButton_6);
+		
+		btnNewButton_6.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("별", userid);
+			}
+		});
+		
+		btnNewButton_7 = new JButton(new ImageIcon("src/imgs/고양이_bt.jpg"));
+		panel.add(btnNewButton_7);
+		
+		btnNewButton_7.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("고양이", userid);
+			}
+		});
+		
+		btnNewButton_8 = new JButton(new ImageIcon("src/imgs/남해마을_bt.jpg"));
+		panel.add(btnNewButton_8);
+		
+		btnNewButton_8.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("남해마을", userid);
+			}
+		});
+		
+		btnNewButton_9 = new JButton(new ImageIcon("src/imgs/벛꽃_bt.jpg"));
+		panel.add(btnNewButton_9);
+
+		btnNewButton_9.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Singleplay("벛꽃", userid);
+			}
+		});
+		
+		JPanel frame = new JPanel();
+		setSize(950,880);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("퍼즐사진선택");
+		setResizable(false);
+		setVisible(true);
+	}
+
+}

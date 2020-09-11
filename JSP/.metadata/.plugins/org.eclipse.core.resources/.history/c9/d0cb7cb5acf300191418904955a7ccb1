@@ -1,0 +1,7 @@
+var status true;
+
+$(document).ready(function(){
+	$("#login").click(function(){
+		checkIt();
+	})
+})

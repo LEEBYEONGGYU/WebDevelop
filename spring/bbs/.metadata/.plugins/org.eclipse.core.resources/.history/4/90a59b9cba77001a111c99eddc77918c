@@ -1,0 +1,57 @@
+package yju.wdb.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import yju.wdb.bbs.HomeController;
+import yju.wdb.domain.BoardVO;
+import yju.wdb.mapper.BoardMapper;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	private static final Logger logger = LoggerFactory.getLogger(Board.class);
+	
+	@Autowired
+	private BoardMapper mapper;
+	
+	/*
+	public BoardServiceImpl(BoardMapper mapper) {
+		this.mapper = mapper;
+	}
+	*/
+	
+	@Override
+	public void register(BoardVO board) {
+		mapper.insert(board);
+
+	}
+
+	@Override
+	public BoardVO get(int bno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modify(BoardVO board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(int bno) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

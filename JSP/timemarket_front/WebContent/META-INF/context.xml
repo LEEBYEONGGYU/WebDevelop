@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+<Resource name="jdbc/jsptest"
+URIEncoding="UTF-8"
+auth="Container"
+
+type="javax.sql.DataSource"
+
+username="root"
+
+password=""
+
+driverClassName="org.mariadb.jdbc.Driver"
+
+url="jdbc:mariadb://localhost:3306/shoptest"
+
+maxActive="5000"
+relaxedQueryChars="[,]"
+maxIdle="5000"/>
+
+</Context>

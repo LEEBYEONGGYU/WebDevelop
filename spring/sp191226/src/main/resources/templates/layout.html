@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, link, content)">
+<head>
+<meta charset="UTF-8">
+<title th:replace="${title}"></title>
+<!-- 공통 파일 -->
+<script type="text/javascript" th:src="@{https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- 각 파일들 개별 추가 항목 -->
+<th:block th:replace="${link}" />
+</head>
+<body>
+	<h2>Happy Class</h2>
+	<a href="/test">test</a>
+	<a href="/" th:href="@{/}">Home</a>
+	<a href="/" th:href="@{/user/}">user</a>
+	<br /><br />
+	<div th:replace="${content}"></div>
+</body>
+</html>

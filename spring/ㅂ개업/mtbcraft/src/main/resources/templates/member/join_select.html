@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header"></head>
+<div id="sub_img"></div>
+
+<div id="member_sel_box">
+	<b>회원가입하기</b> <br />
+	<p id="f33">회원종류를 선택하세요</p>
+</div>
+
+<div id="member_sel">
+	<a href="/member/general_join">
+		<div id="general_mem">
+			<h4>일반회원가입하기</h4>
+		</div>
+	</a>
+	
+	<a href="/member/repair_join">
+		<div id="repair_mem">
+			<h4>정비회원가입하기</h4>
+		</div>
+	</a>
+</div>
+
+<footer th:replace="footer"></footer>

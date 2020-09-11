@@ -1,0 +1,17 @@
+package android_test_code;
+
+public class Main {
+
+	static double distance;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a = "2020-06-19";
+		String ab = a.substring(a.lastIndexOf("-")+1);
+				int b = a.lastIndexOf("-");
+
+				System.out.println(ab);
+		
+	}
+
+}

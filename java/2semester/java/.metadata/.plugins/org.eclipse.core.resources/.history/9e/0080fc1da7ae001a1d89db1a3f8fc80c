@@ -1,0 +1,34 @@
+package android_test_code;
+
+public class Main {
+
+	static double distance;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		distance = 50.5825874;
+		int a = (int)distance;
+		
+		String test = String.valueOf(a);
+		
+		
+		int leget = test.length();
+		
+		
+		String get = test.substring(test.length()-2);
+		String get2 = get.substring(0,1);
+		
+		System.out.println(leget);
+		System.out.println(get2);
+		int leeget = Integer.parseInt(get);
+		
+		if(leeget>40) {
+			System.out.println("주의하소");
+		}
+		
+		
+		
+	}
+
+}

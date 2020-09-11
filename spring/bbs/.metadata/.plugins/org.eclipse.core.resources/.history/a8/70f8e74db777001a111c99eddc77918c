@@ -1,0 +1,39 @@
+package yju.wdb.service;
+
+import java.util.List;
+
+import yju.wdb.domain.BoardVO;
+
+public class BoardServiceImpl implements BoardService {
+
+	@Override
+	public void register(BoardVO board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public BoardVO get(int bno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modify(BoardVO board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(int bno) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

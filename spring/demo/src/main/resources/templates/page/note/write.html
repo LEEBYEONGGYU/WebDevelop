@@ -1,0 +1,17 @@
+<div id="write_note_in">
+	<form action="/page/note/write_ok" method="post" enctype="multipart/form-data">
+		<div id="write_t">쪽지쓰기</div>
+		<div id="write_form">
+			<div class="wr_ip">
+				<input type="text" name="recv_id" placeholder="받는사람" required /><span id="add_bt">가져오기</span>
+			</div>
+			<div class="wr_ip wr_ip_top">
+				<input type="text" name="title" placeholder="제목" required />
+			</div>
+			<div class="wr_ip wr_ip_top">
+				<textarea name="content" placeholder="내용" required></textarea>
+			</div>
+			<button type="submit" class="wri_bt wr_ip_top">보내기</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,56 @@
+<head th:replace="header"></head>
+<aside>
+	<ul id="note_menu">
+		<li id="rec"><img src="/imgs/recv.png" alt="recv" title="recv" /><a href="#"><b>받은쪽지함</b></a></li>
+		<li id="send"><img src="/imgs/send.png" alt="recv" title="recv" /><a href="#">보낸쪽지함</a></li>
+	</ul>
+</aside>
+<div id="note_read">
+	<div id="note_read_bt">
+		<a href="" class="del_bt">삭제</a>
+		<a href="" class="dap_bt">답장</a>
+		<a class="dap_bt" id="fr_bt" href="#">주소록 추가</a>
+	</div>
+	<div id="frn_cre">
+		<div id="frn_t">주소록 추가</div>
+		<div id="no_ri_line"></div>
+		<div id="frn_st">선택한 사용자를 추가합니다.</div>
+			<form action="" method="post">
+				<table class="frn-table">
+				    <thead>
+				      <tr>
+				        <th width="120" class="tc">아이디</th>
+				        <th width="120" class="tc">이름</th>
+				        <th width="120" class="tc">이메일</th>
+				      </tr>
+				    </thead>
+				        <tbody>
+				          <tr align="center">
+				        	<td><input type="text" name="fr_name" required="required" value="" size="15" readonly/></td>
+				        	<td><input type="text" name="u_name" required="required" size="15" /></td>
+				        	<td><input type="text" name="u_mail" required="required" size="15" /></td>
+				          </tr>
+				        </tbody>
+					</table>
+					<div id="frn_bt" class="tc">
+						<button type="submit">확인</button>
+						<button type="button" id="frn_set">취소</button>				
+					</div>
+				</form>
+			</div>
+	<div id="no_ri_line"></div>
+	<div id="note_info">
+		<div id="user_info">
+			<ul>
+				<li><b>보낸사람</b>&nbsp;&nbsp;&nbsp;<span th:text="${getRead.send_id}"></span></li>
+				<li><b>받은시간</b>&nbsp;&nbsp;&nbsp;</li>
+				<li><b>받은파일</b>&nbsp;&nbsp;&nbsp;</a></li>
+			</ul>
+			<div id="no_ri_line"></div>
+		</div>
+		<div id="bo_content">
+			
+		</div>
+	</div>
+</div>
+<span th:text="${getRead}"></span>
